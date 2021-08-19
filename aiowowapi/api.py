@@ -188,7 +188,6 @@ class API():
         :rtype: dict
         """
         
-        
         result = None
 
         method = str(method).upper()
@@ -201,7 +200,6 @@ class API():
             current_attempt = 1
             while current_attempt <= self.max_request_retries and not result:
                 try:
-                    print('Test')
                     async with aiohttp.ClientSession() as http_session:
 
                         supported_request_types = {
