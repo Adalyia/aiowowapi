@@ -155,7 +155,7 @@ class API():
                     
                 return self.access_tokens[self.client_region]['Token']
             else:
-                raise 
+                raise AccessTokenException('Failed to retrieve an access token, verify your credentials & internet connectivity.')
 
     async def multiRequest(self, requests:list) -> list:
         """Make several API requests in parallel
@@ -165,15 +165,12 @@ class API():
         :return: The API responses as a list of dicts
         :rtype: list
         """
-        
-        if type(requests) == list:
-            data = await asyncio.gather(*requests)
-            if data:
-                return data
-            else:
-                return None
+        data = await asyncio.gather(*requests)
+        if data:
+            return data
         else:
-            raise WoWApiException('Input for multi requests must be of type list')
+            return None
+
         
     
     async def getResource(self, hostname:str, api_endpoint:str, params:dict=None, auth:aiohttp.BasicAuth=None, method:str='GET') -> Union[dict, None]:
@@ -190,7 +187,7 @@ class API():
         :return: The response from the API as a JSON dictionary
         :rtype: dict
         """
-
+        
         
         result = None
 
@@ -204,6 +201,7 @@ class API():
             current_attempt = 1
             while current_attempt <= self.max_request_retries and not result:
                 try:
+                    print('Test')
                     async with aiohttp.ClientSession() as http_session:
 
                         supported_request_types = {
@@ -213,19 +211,24 @@ class API():
 
                         if method in supported_request_types:
                             async with supported_request_types[method](api_request, params=params, auth=auth) as response:
-
+                                
                                 if response.status >= 200 and response.status < 300:
                                     result = await response.json()
-                                    
                                 response.raise_for_status()
+                                
+                                    
                         else:
                             raise RequestMethodException('Invalid request method {}, supported methods are {}'.format(
                                 method, list(supported_request_types.keys())))
                 except aiohttp.ClientError as e:
                     if current_attempt == self.max_request_retries:
-                        raise RequestException('Error making API request to url {}, {}'.format(api_request, e)) from e
+                        raise
                     current_attempt += 1
                     await asyncio.sleep(self.request_retry_delay)
+                # finally:
+                #     if result is None:
+                #         current_attempt += 1
+                #         await asyncio.sleep(self.request_retry_delay)
 
         return result
 
