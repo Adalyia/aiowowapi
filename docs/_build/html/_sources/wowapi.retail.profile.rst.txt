@@ -1,0 +1,7 @@
+wowapi.retail.profile module
+============================
+
+.. automodule:: wowapi.retail.profile
+   :members:
+   :undoc-members:
+   :show-inheritance:

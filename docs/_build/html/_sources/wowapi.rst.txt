@@ -1,0 +1,27 @@
+wowapi package
+==============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   wowapi.retail
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   wowapi.api
+   wowapi.wowapi
+
+Module contents
+---------------
+
+.. automodule:: wowapi
+   :members:
+   :undoc-members:
+   :show-inheritance:

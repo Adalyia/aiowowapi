@@ -1,0 +1,7 @@
+wowapi.api module
+=================
+
+.. automodule:: wowapi.api
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,12 @@
+tests/**
+tests
+**/__pycache__/**
+__pycache__
+.vscode
+test.*
+dist/**
+dist
+build
+build/**
+aiowowapi.egg-info
+aiowowapi.egg-info/**

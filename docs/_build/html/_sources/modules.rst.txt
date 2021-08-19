@@ -1,0 +1,7 @@
+wowapi.py
+=========
+
+.. toctree::
+   :maxdepth: 6
+
+   wowapi
