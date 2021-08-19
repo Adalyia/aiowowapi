@@ -1,3 +1,10 @@
+.. image:: https://img.shields.io/pypi/v/aiowowapi.svg
+   :target: https://pypi.python.org/pypi/aiowowapi
+   :alt: PyPI version info
+.. image:: https://img.shields.io/pypi/pyversions/aiowowapi.svg
+   :target: https://pypi.python.org/pypi/aiowowapi
+   :alt: PyPI supported Python versions
+
 aiowowapi docs
 =====================================
 
