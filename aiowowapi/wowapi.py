@@ -1,37 +1,37 @@
 import re
 from typing import Union
 from urllib.parse import *
-from aiowowapi.api import API
+from . import API, APIRegion
 from .retail.retail import RetailApi
 
 
 class WowApi(API):
-    """This class contains some useful functions/QoL features for working with the World of Warcraft API
+    """This class contains some useful functions/QoL features for working with the World of Warcraft API. For additional arguments see the API class documentation.
 
     :param client_id: A Battle.net Project Client ID - Generated at https://develop.battle.net/access/clients
     :type client_id: str
     :param client_secret: A Battle.net Project Client Secret - Generated at https://develop.battle.net/access/clients
     :type client_secret: str
-    :param client_region: The Battle.net/WoW API region which we submit requests to, defaults to 'us'
-    :type client_region: str, optional
-    :param client_locale: The locale used for API requests. Compatbility varies by region, see https://develop.battle.net/documentation/guides/regionality-and-apis, defaults to 'en_US'
-    :type client_locale: str, optional
+    :param client_region: The Battle.net/WoW API region which we submit requests to, defaults to APIRegion.US
+    :type client_region: str, APIRegion, optional
     :param max_parallel_requests: The maximum number of parallel aiohttp requests
     :type max_parallel_requests: int, optional
     :param max_request_retries: The maximum number of aiohttp request retries (min 1)
     :type max_request_retries: int, optional
-    :param request_retry_delay: The delay between aiohttp request retries (min 1) (This value is in seconds)
+    :param request_retry_delay: The delay between aiohttp request retries (min 0) (This value is in seconds)
     :type request_retry_delay: int, optional
+    :param request_debugging: Whether exceptions should be raised requests resulting in an HTTP error (if set to false requests resulting in an HTTP error will simply return None instead of raising an exception)
+    :type request_debugging: bool, optional
     """
 
-    def __init__(self, client_id:str, client_secret:str, client_region:str='us', client_locale:str='en_US', max_parallel_requests:int=50, max_request_retries:int=3, request_retry_delay:int=1):
+    def __init__(self, client_id:str, client_secret:str, client_region:Union[APIRegion, str], max_parallel_requests:int=50, max_request_retries:int=3, request_retry_delay:int=1, request_debugging:bool=True):
         """Constructor method
         """
-        super().__init__(client_id, client_secret, client_region, client_locale, max_parallel_requests, max_request_retries, request_retry_delay)
+        super().__init__(client_id, client_secret, client_region=client_region, max_parallel_requests=max_parallel_requests, max_request_retries=max_request_retries, request_debugging=request_debugging)
 
         self.Retail = RetailApi(super())
         
-        self.realms = None
+        self.__realms = None
         
 
     async def parseArmoryLink(self, url:str) -> Union[str, None]:
@@ -65,8 +65,8 @@ class WowApi(API):
         :return: A matching realm's slug
         :rtype: str
         """
-        if self.realms:
-            for realm in self.realms:
+        if self.__realms:
+            for realm in self.__realms:
                 input = str(input).lower()
                 if input in str(realm['name']).lower() or input in str(realm['fixed']).lower() or input in str(realm['slug']).lower() or input == str(realm['id']).lower():
                     return realm['slug']
@@ -74,9 +74,9 @@ class WowApi(API):
             data = await self.Retail.GameData.getRealmsIndex()
             
             if data:
-                self.realms = []
+                self.__realms = []
                 for realm in data['realms']:
-                    self.realms.append({'name': realm['name'], 'fixed': str(realm['name']).replace(" ",""), 'slug': realm['slug'], 'id': realm['id']})
+                    self.__realms.append({'name': realm['name'], 'fixed': str(realm['name']).replace(" ",""), 'slug': realm['slug'], 'id': realm['id']})
                 return await self.getRealmSlug(input)
                     
         return None

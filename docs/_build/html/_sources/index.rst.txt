@@ -17,7 +17,7 @@ Installing
     python3 -m pip install -U aiowowapi
 
     # Windows
-    pip install -U aiowowapi
+    python -m pip install -U aiowowapi
 
 
 Current Features

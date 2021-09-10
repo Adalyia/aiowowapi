@@ -17,7 +17,7 @@ Installing
     python3 -m pip install -U aiowowapi
 
     # Windows
-    pip install -U aiowowapi
+    python -m pip install -U aiowowapi
 
 
 Current Features
@@ -46,17 +46,17 @@ Example
     from aiowowapi import WowApi
 
     async def main():
-        # Create WoWApi object
-        WoW = WowApi('<CLIENT_ID>','<CLIENT_SECRET>', 'us')
+        # Create WoWApi client object
+        Client = WowApi('<CLIENT_ID>','<CLIENT_SECRET>', 'us')
         
         # Retrieve user's Mythic+ Profile
-        data = await WoW.Retail.Profile.getCharMythicKeystoneProfileIndex('adalyia', 'illidan')
+        data = await Client.Retail.Profile.getCharMythicKeystoneProfileIndex('adalyia', 'illidan')
         
         # Print user's Mythic+ Rating
         print(data['current_mythic_rating']['rating'])
 
 
-    asyncio.run(main())
+    asyncio.get_event_loop().run_until_complete(main())
 
 Links
 ------

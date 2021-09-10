@@ -13,9 +13,10 @@ __title__ = 'aiowowapi'
 __author__ = 'Adalyia'
 __license__ = 'MIT'
 __copyright__ = 'Copyright 2021-Present Adalyia'
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 __date__ = "29/6/2021"
 __path__ = __import__('pkgutil').extend_path(__path__, __name__)
 
 from .api import *
 from .wowapi import *
+from .regions import *
