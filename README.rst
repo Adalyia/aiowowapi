@@ -4,6 +4,9 @@
 .. image:: https://img.shields.io/pypi/pyversions/aiowowapi.svg
    :target: https://pypi.python.org/pypi/aiowowapi
    :alt: PyPI supported Python versions
+.. image:: https://readthedocs.org/projects/aiowowapi/badge/?version=latest
+   :target: https://aiowowapi.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
 
 aiowowapi docs
 =====================================
@@ -62,7 +65,7 @@ Example
 
 Links
 ------
-* `aiowowapi's Documentation <https://docs.adalyia.com/wowapi>`_
+* `aiowowapi's Documentation <https://aiowowapi.readthedocs.io/en/latest/>`_
 * `Blizzard's API Documentation <https://develop.battle.net/documentation>`_
 * `Register a Blizzard API Client <https://develop.battle.net/access/clients>`_
 * `Blizzard's API Forums <https://us.forums.blizzard.com/en/blizzard/c/api-discussion/18>`_
