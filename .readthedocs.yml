@@ -9,6 +9,12 @@ sphinx:
   fail_on_warning: false
   builder: html
 
+submodules:
+  include: all
+  recursive: true
+
+
+
 python:
   version: "3.8"
   install:
