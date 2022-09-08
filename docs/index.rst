@@ -24,13 +24,13 @@ Current Features
 ---------------------
 * Retail Game Data API Support
 * Retail Profile API Support
+* Classic Game Data API Support
 * Rate limiting
 * Request retries
 * QoL WoW-Specific functions (Money -> Gold/Silver/Copper, Armoury link parser, etc)
 
 TODO
 -----
-* Add support for World of Warcraft: Classic/TBC API endpoints
 * Add caching for certain requests
 * Less janky error handling
 
@@ -46,17 +46,11 @@ Example
     from aiowowapi import WowApi
 
     async def main():
-        # Create WoWApi client object
-        Client = WowApi('<CLIENT_ID>','<CLIENT_SECRET>', 'us')
-        
-        # Retrieve user's Mythic+ Profile
-        data = await Client.Retail.Profile.getCharMythicKeystoneProfileIndex('adalyia', 'illidan')
-        
-        # Print user's Mythic+ Rating
-        print(data['current_mythic_rating']['rating'])
+        Client = WowApi('<CLIENT_ID>','<CLIENT_SECRET>', 'us', request_debugging=True)
 
+        print(await Client.Retail.Profile.get_character_profile_status('illidan', 'adalyia'))
 
-    asyncio.get_event_loop().run_until_complete(main())
+    asyncio.run(main())
 
 Links
 ------
@@ -79,6 +73,7 @@ This project is not affiliated with or endorsed by `Blizzard Entertainment <http
    aiowowapi.wowapi.rst
    aiowowapi.retail.profile.rst
    aiowowapi.retail.game_data.rst
+   aiowowapi.classic.game_data_classic.rst
 
 
 Indices and tables

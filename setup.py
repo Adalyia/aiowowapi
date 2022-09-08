@@ -6,7 +6,7 @@ with open('README.rst') as f:
     readme = f.read()
     
 requirements = [
-    'aiohttp>=3.7.0,<3.8.0'
+    'aiohttp>=3.7.0,<3.9.0'
 ]
 
 extras_require = {
@@ -19,6 +19,7 @@ extras_require = {
 packages = [
     'aiowowapi',
     'aiowowapi.retail',
+    'aiowowapi.classic',
 ]
 
 setup(
@@ -29,7 +30,7 @@ setup(
     "Documentation": "https://docs.adalyia.com/wowapi",
     "Issue tracker": "https://github.com/Adalyia/aiowowapi/issues",
     },
-    version='1.0.3',
+    version='2.0.1',
     packages=packages,
     license='MIT',
     description='An async ready client library for the World of Warcraft APIs',
@@ -47,6 +48,7 @@ setup(
     'Operating System :: OS Independent',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
     'Topic :: Internet',
     'Topic :: Software Development :: Libraries',
     'Topic :: Software Development :: Libraries :: Python Modules',

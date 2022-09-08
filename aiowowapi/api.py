@@ -4,7 +4,8 @@ import asyncio
 from typing import Union
 from .regions import APIRegion
 
-class API():
+
+class API:
     """This is our core API class with methods for interacting with Battle.net's various APIs
 
     :param client_id: A Battle.net Project Client ID - Generated at https://develop.battle.net/access/clients
@@ -23,7 +24,9 @@ class API():
     :type request_debugging: bool, optional
     """
 
-    def __init__(self, client_id:str, client_secret:str, client_region:Union[APIRegion, str], max_parallel_requests:int=50, max_request_retries:int=3, request_retry_delay:int=1, request_debugging:bool=True):
+    def __init__(self, client_id: str, client_secret: str, client_region: Union[APIRegion, str],
+                 max_parallel_requests: int = 50, max_request_retries: int = 3, request_retry_delay: int = 1,
+                 request_debugging: bool = True):
         """Constructor method
         """
 
@@ -32,20 +35,19 @@ class API():
         self.client_region = None
         self.client_locale = None
 
-        self.setRegion(client_region)
+        self.set_region(client_region)
 
         self.access_tokens = {}
-        
-        self.semaphore = asyncio.Semaphore(max_parallel_requests)
-        
-        self.max_request_retries = max_request_retries if max_request_retries > 1 else 1
-        
-        self.request_retry_delay = request_retry_delay if request_retry_delay > 0 else 1
-        
-        self.request_debugging = request_debugging
-        
 
-    async def getRegion(self) -> APIRegion:
+        self.semaphore = asyncio.Semaphore(max_parallel_requests)
+
+        self.max_request_retries = max_request_retries if max_request_retries > 1 else 1
+
+        self.request_retry_delay = request_retry_delay if request_retry_delay > 0 else 1
+
+        self.request_debugging = request_debugging
+
+    async def get_region(self) -> APIRegion:
         """Returns the current region being used for API requests
 
         :return: The current region being used for API requests
@@ -53,7 +55,7 @@ class API():
         """
         return self.client_region.name
 
-    async def getLocale(self) -> APIRegion:
+    async def get_locale(self) -> APIRegion:
         """Returns the current locale being used for API requests
 
         :return: The current locale being used for API requests
@@ -61,7 +63,7 @@ class API():
         """
         return self.client_locale
 
-    def setRegion(self, region:Union[APIRegion, str]) -> None:
+    def set_region(self, region: Union[APIRegion, str]) -> None:
         """Sets the region we'll use for API requests
 
         :param region: The desired region to be used for API requests
@@ -84,7 +86,7 @@ class API():
             raise InvalidRegionException('Invalid API Region {}, supported regions are {}'.format(
                 region, list(APIRegion.__members__.keys())))
 
-    def setLocale(self, locale:str) -> None:
+    def set_locale(self, locale: str) -> None:
         """Sets the locale we'll use for API requests
 
         :param locale: The desired locale to be used for API requests.
@@ -97,23 +99,23 @@ class API():
             raise InvalidLocaleException('Invalid Regional Locale {}, supported locales for {} are {}'.format(
                 locale, self.client_region.name, self.client_region.value['supported_locales']))
 
-    async def getHostname(self) -> str:
+    async def get_hostname(self) -> str:
         """Returns the current region's hostname for Game API requests
 
         :return: The current region's hostname for Game API requests
         :rtype: str
         """
         return self.client_region.value['game_api_hostname']
-    
-    async def getOAuthHostname(self) -> str:
+
+    async def get_oauth_hostname(self) -> str:
         """Returns the current region's hostname for OAuth API requests
 
         :return: The current region's hostname for OAuth API requests
         :rtype: str
         """
         return self.client_region.value['oauth_api_hostname']
-    
-    async def getAccessToken(self) -> str:
+
+    async def get_access_token(self) -> str:
         """Returns and / or generates an API access token using the provided credentials in the class constructor
 
         :raises RequestException: Raised when we encounter an issue when making an aiohttp request.
@@ -121,27 +123,30 @@ class API():
         :rtype: str
         """
 
-        if self.access_tokens and self.access_tokens[self.client_region.name] and self.access_tokens[self.client_region.name]['Expires'] > datetime.now():
-            return self.access_tokens[self.client_region.name]['Token']        
+        if self.access_tokens and self.access_tokens[self.client_region.name] and \
+                self.access_tokens[self.client_region.name]['Expires'] > datetime.now():
+            return self.access_tokens[self.client_region.name]['Token']
         else:
             endpoint = f"/oauth/token"
 
-            hostname = await self.getOAuthHostname()
-            
+            hostname = await self.get_oauth_hostname()
+
             params = {'grant_type': 'client_credentials'}
-            
-            data = await self.getResource(hostname, endpoint, params, auth=aiohttp.BasicAuth(self.client_id, self.client_secret), method="POST")
-            
+
+            data = await self.get_resource(hostname, endpoint, params,
+                                           auth=aiohttp.BasicAuth(self.client_id, self.client_secret), method="POST")
+
             if data is not None:
-                expires = datetime.now() + timedelta(seconds=data['expires_in']-60)
-                
+                expires = datetime.now() + timedelta(seconds=data['expires_in'] - 60)
+
                 self.access_tokens[self.client_region.name] = {'Token': data['access_token'], 'Expires': expires}
-                    
+
                 return self.access_tokens[self.client_region.name]['Token']
             else:
-                raise AccessTokenException('Failed to retrieve an access token, verify your credentials & internet connectivity.')
+                raise AccessTokenException(
+                    'Failed to retrieve an access token, verify your credentials & internet connectivity.')
 
-    async def multiRequest(self, requests:list) -> list:
+    async def multi_request(self, requests: list) -> list:
         """Make several API requests in parallel
 
         :param requests: A list of API request coroutines
@@ -155,9 +160,8 @@ class API():
         else:
             return None
 
-        
-    
-    async def getResource(self, hostname:str, api_endpoint:str, params:dict=None, auth:aiohttp.BasicAuth=None, method:str='GET') -> Union[dict, None]:
+    async def get_resource(self, hostname: str, api_endpoint: str, params: dict = None, auth: aiohttp.BasicAuth = None,
+                           method: str = 'GET') -> Union[dict, None]:
         """Make an API request and return the response as a JSON dictionary
 
         :param api_endpoint: The API endpoint following the regional hostname we wish to send a request to.
@@ -171,7 +175,7 @@ class API():
         :return: The response from the API as a JSON dictionary
         :rtype: dict
         """
-        
+
         result = None
 
         method = str(method).upper()
@@ -179,7 +183,7 @@ class API():
         api_request = hostname.format(
             api_endpoint=api_endpoint
         )
-        
+
         async with self.semaphore:
             current_attempt = 1
             while current_attempt <= self.max_request_retries and not result:
@@ -194,14 +198,15 @@ class API():
                         }
 
                         if method in supported_request_types:
-                            async with supported_request_types[method](api_request, params=params, auth=auth) as response:
-                                
+                            async with supported_request_types[method](api_request, params=params,
+                                                                       auth=auth) as response:
+
                                 if response.status >= 200 and response.status < 300:
                                     result = await response.json()
-                                
+
                                 response.raise_for_status()
-                                
-                                    
+
+
                         else:
                             raise RequestMethodException('Invalid request method {}, supported methods are {}'.format(
                                 method, list(supported_request_types.keys())))
@@ -223,7 +228,7 @@ class WoWApiException(Exception):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="An error was encountered with wowapi"):
+    def __init__(self, message: str = "An error was encountered with wowapi"):
         super().__init__(message)
 
 
@@ -234,9 +239,10 @@ class AccessTokenException(WoWApiException):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="An error was encountered retrieving an API access token"):
+    def __init__(self, message: str = "An error was encountered retrieving an API access token"):
         super().__init__(message)
-        
+
+
 class RequestException(WoWApiException):
     """Exception thrown when something goes wrong with an HTTP API request
 
@@ -244,9 +250,10 @@ class RequestException(WoWApiException):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="Error making API request"):
+    def __init__(self, message: str = "Error making API request"):
         super().__init__(message)
-    
+
+
 class RequestMethodException(RequestException):
     """Exception thrown when an invalid HTTP request method is provided
 
@@ -254,7 +261,7 @@ class RequestMethodException(RequestException):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="Invalid Request Method Provided"):
+    def __init__(self, message: str = "Invalid Request Method Provided"):
         super().__init__(message)
 
 
@@ -265,7 +272,7 @@ class InvalidRegionException(WoWApiException):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="Invalid API Region"):
+    def __init__(self, message: str = "Invalid API Region"):
         super().__init__(message)
 
 
@@ -276,5 +283,5 @@ class InvalidLocaleException(WoWApiException):
     :type message: str, optional
     """
 
-    def __init__(self, message:str="Invalid API Locale"):
+    def __init__(self, message: str = "Invalid API Locale"):
         super().__init__(message)

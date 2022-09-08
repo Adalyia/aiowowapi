@@ -182,7 +182,7 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="wowapi.wowapi.WowApi.getMoney">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">getMoney</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.getMoney" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">format_wow_gold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.getMoney" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts a WoW money value to a formatted string of Gold, Silver, and Copper</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -199,7 +199,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wowapi.wowapi.WowApi.getRealmSlug">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">getRealmSlug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.getRealmSlug" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_realm_slug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.getRealmSlug" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attempts to match user input with a WoW realm and return it’s slug</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -216,7 +216,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wowapi.wowapi.WowApi.parseArmoryLink">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">parseArmoryLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.parseArmoryLink" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#wowapi.wowapi.WowApi.parseArmoryLink" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses a World of Warcraft Armoury link and returns the character’s name, realm, and region</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

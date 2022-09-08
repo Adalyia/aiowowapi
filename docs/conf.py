@@ -20,11 +20,11 @@ sys.path.append(os.path.abspath('extensions'))
 # -- Project information -----------------------------------------------------
 
 project = 'aiowowapi'
-copyright = '2021, Adalyia'
+copyright = '2022, Adalyia'
 author = 'Adalyia'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0.3'
+release = '2.0.1'
 
 
 # -- General configuration ---------------------------------------------------

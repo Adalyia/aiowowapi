@@ -3,6 +3,7 @@ from typing import Union
 from urllib.parse import *
 from . import API, APIRegion
 from .retail.retail import RetailApi
+from .classic.classic import ClassicApi
 
 
 class WowApi(API):
@@ -24,17 +25,21 @@ class WowApi(API):
     :type request_debugging: bool, optional
     """
 
-    def __init__(self, client_id:str, client_secret:str, client_region:Union[APIRegion, str], max_parallel_requests:int=50, max_request_retries:int=3, request_retry_delay:int=1, request_debugging:bool=True):
+    def __init__(self, client_id: str, client_secret: str, client_region: Union[APIRegion, str],
+                 max_parallel_requests: int = 50, max_request_retries: int = 3, request_retry_delay: int = 1,
+                 request_debugging: bool = True):
         """Constructor method
         """
-        super().__init__(client_id, client_secret, client_region=client_region, max_parallel_requests=max_parallel_requests, max_request_retries=max_request_retries, request_debugging=request_debugging)
+        super().__init__(client_id, client_secret, client_region=client_region,
+                         max_parallel_requests=max_parallel_requests, max_request_retries=max_request_retries,
+                         request_debugging=request_debugging)
 
         self.Retail = RetailApi(super())
-        
-        self.__realms = None
-        
+        self.Classic = ClassicApi(super())
 
-    async def parseArmoryLink(self, url:str) -> Union[str, None]:
+        self.__realms = None
+
+    async def parse_armory_link(self, url: str) -> Union[str, None]:
         """Parses a World of Warcraft Armoury link and returns the character's name, realm, and region
 
         :param url: A World of Warcraft Armoury link such as https://worldofwarcraft.com/en-us/character/us/{slug}/{character}
@@ -57,7 +62,7 @@ class WowApi(API):
 
         return None
 
-    async def getRealmSlug(self, input:str) -> Union[str, None]:
+    async def get_realm_slug(self, input: str) -> Union[str, None]:
         """Attempts to match user input with a WoW realm and return it's slug
 
         :param input: A string to query the realms index with (full name, id, short name, etc)
@@ -68,20 +73,23 @@ class WowApi(API):
         if self.__realms:
             for realm in self.__realms:
                 input = str(input).lower()
-                if input in str(realm['name']).lower() or input in str(realm['fixed']).lower() or input in str(realm['slug']).lower() or input == str(realm['id']).lower():
+                if input in str(realm['name']).lower() or input in str(realm['fixed']).lower() or input in str(
+                        realm['slug']).lower() or input == str(realm['id']).lower():
                     return realm['slug']
         else:
             data = await self.Retail.GameData.getRealmsIndex()
-            
+
             if data:
                 self.__realms = []
                 for realm in data['realms']:
-                    self.__realms.append({'name': realm['name'], 'fixed': str(realm['name']).replace(" ",""), 'slug': realm['slug'], 'id': realm['id']})
-                return await self.getRealmSlug(input)
-                    
+                    self.__realms.append(
+                        {'name': realm['name'], 'fixed': str(realm['name']).replace(" ", ""), 'slug': realm['slug'],
+                         'id': realm['id']})
+                return await self.get_realm_slug(input)
+
         return None
 
-    async def getMoney(self, input:int) -> str:
+    async def format_wow_gold(self, input: int) -> str:
         """Converts a WoW money value to a formatted string of Gold, Silver, and Copper
 
         :param input: A WoW currency/money value in copper
@@ -89,9 +97,9 @@ class WowApi(API):
         :return: {}g {}s {}c
         :rtype: str
         """
-        
+
         gold = int(input / 10000)
         silver = int((input % 10000) / 100)
         copper = int((input % 10000) % 100)
-        
+
         return f'{gold:,}g {silver:,}s {copper:,}c'
