@@ -123,6 +123,21 @@ Depending on the number of active auctions on the specified connected realm, the
 
         return await self.get_game_api_resource(namespace, endpoint)
 
+    async def get_commodity_auctions(self):
+        """Returns all active commodity auctions for a region.
+
+Auction house data updates at a set interval. The value was initially set at 1 hour; however, it might change over time without notice.
+
+Depending on the number of active auctions on the region, the response from this endpoint may be rather large, sometimes exceeding 10 MB.
+
+        :return: Returns all active commodity auctions for a region.
+        :rtype: dict
+        """
+        endpoint = f"/data/wow/auctions/commodities"
+        namespace = "dynamic-{region}"
+
+        return await self.get_game_api_resource(namespace, endpoint)
+
 # endregion
 # region Azerite Essence API
 

@@ -30,7 +30,7 @@ setup(
     "Documentation": "https://docs.adalyia.com/wowapi",
     "Issue tracker": "https://github.com/Adalyia/aiowowapi/issues",
     },
-    version='2.0.1',
+    version='2.0.2',
     packages=packages,
     license='MIT',
     description='An async ready client library for the World of Warcraft APIs',
