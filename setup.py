@@ -27,10 +27,10 @@ setup(
     author='Adalyia',
     url='https://github.com/Adalyia/aiowowapi',
     project_urls={
-    "Documentation": "https://docs.adalyia.com/wowapi",
+    "Documentation": "https://aiowowapi.readthedocs.io/en/latest",
     "Issue tracker": "https://github.com/Adalyia/aiowowapi/issues",
     },
-    version='2.0.2',
+    version='2.0.3',
     packages=packages,
     license='MIT',
     description='An async ready client library for the World of Warcraft APIs',

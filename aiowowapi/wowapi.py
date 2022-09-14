@@ -26,20 +26,21 @@ class WowApi(API):
     """
 
     def __init__(self, client_id: str, client_secret: str, client_region: Union[APIRegion, str],
-                 max_parallel_requests: int = 50, max_request_retries: int = 3, request_retry_delay: int = 1,
-                 request_debugging: bool = True):
+                 max_parallel_requests: int = None, max_request_retries: int = None, request_retry_delay: int = None,
+                 request_debugging: bool = None):
         """Constructor method
         """
         super().__init__(client_id, client_secret, client_region=client_region,
                          max_parallel_requests=max_parallel_requests, max_request_retries=max_request_retries,
-                         request_debugging=request_debugging)
+                         request_retry_delay=request_retry_delay, request_debugging=request_debugging)
 
         self.Retail = RetailApi(super())
         self.Classic = ClassicApi(super())
 
         self.__realms = None
 
-    async def parse_armory_link(self, url: str) -> Union[str, None]:
+    @staticmethod
+    async def parse_armory_link(url: str) -> Union[str, None]:
         """Parses a World of Warcraft Armoury link and returns the character's name, realm, and region
 
         :param url: A World of Warcraft Armoury link such as https://worldofwarcraft.com/en-us/character/us/{slug}/{character}
@@ -77,7 +78,7 @@ class WowApi(API):
                         realm['slug']).lower() or input == str(realm['id']).lower():
                     return realm['slug']
         else:
-            data = await self.Retail.GameData.getRealmsIndex()
+            data = await self.Retail.GameData.get_realms_index()
 
             if data:
                 self.__realms = []
@@ -89,7 +90,8 @@ class WowApi(API):
 
         return None
 
-    async def format_wow_gold(self, input: int) -> str:
+    @staticmethod
+    async def format_wow_gold(input: int) -> str:
         """Converts a WoW money value to a formatted string of Gold, Silver, and Copper
 
         :param input: A WoW currency/money value in copper
