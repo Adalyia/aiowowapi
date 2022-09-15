@@ -37,7 +37,7 @@ class API:
 
         self.set_region(client_region)
 
-        self._access_tokens = {}
+        self.__access_tokens = {}
 
         self.__semaphore = asyncio.Semaphore(max_parallel_requests if max_parallel_requests is not None else 50)
 
@@ -123,9 +123,9 @@ class API:
         :rtype: str
         """
 
-        if self._access_tokens and self._access_tokens[self.__client_region.name] and \
-                self._access_tokens[self.__client_region.name]['Expires'] > datetime.now():
-            return self._access_tokens[self.__client_region.name]['Token']
+        if self.__access_tokens and self.__access_tokens[self.__client_region.name] and \
+                self.__access_tokens[self.__client_region.name]['Expires'] > datetime.now():
+            return self.__access_tokens[self.__client_region.name]['Token']
         else:
             endpoint = f"/oauth/token"
 
@@ -136,15 +136,15 @@ class API:
             data = await self.get_resource(hostname, endpoint, params,
                                            auth=aiohttp.BasicAuth(self.__client_id, self.__client_secret), method="POST")
 
-            if data is not None:
-                expires = datetime.now() + timedelta(seconds=data['expires_in'] - 60)
-
-                self._access_tokens[self.__client_region.name] = {'Token': data['access_token'], 'Expires': expires}
-
-                return self._access_tokens[self.__client_region.name]['Token']
-            else:
+            if data is None:
                 raise AccessTokenException(
                     'Failed to retrieve an access token, verify your credentials & internet connectivity.')
+
+            expires = datetime.now() + timedelta(seconds=data['expires_in'] - 60)
+
+            self.__access_tokens[self.__client_region.name] = {'Token': data['access_token'], 'Expires': expires}
+
+            return self.__access_tokens[self.__client_region.name]['Token']
 
     @staticmethod
     async def multi_request(requests: list) -> Union[tuple, list, None]:
@@ -202,19 +202,18 @@ class API:
                             'DELETE': http_session.delete
                         }
 
-                        if method in supported_request_types:
-                            async with supported_request_types[method](api_request, params=params,
-                                                                       auth=auth) as response:
-
-                                if response.status >= 200 and response.status < 300:
-                                    result = await response.json()
-
-                                response.raise_for_status()
-
-
-                        else:
+                        if method not in supported_request_types:
                             raise RequestMethodException('Invalid request method {}, supported methods are {}'.format(
                                 method, list(supported_request_types.keys())))
+
+                        async with supported_request_types[method](api_request, params=params,
+                                                                   auth=auth) as response:
+
+                            if 200 <= response.status < 300:
+                                result = await response.json()
+
+                            response.raise_for_status()
+
                 except aiohttp.ClientError:
                     if current_attempt == self.__max_request_retries:
                         if self.__request_debugging:
