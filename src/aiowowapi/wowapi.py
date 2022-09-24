@@ -1,5 +1,5 @@
 import re
-from typing import Union
+from typing import Union, Dict, Optional
 from urllib.parse import *
 
 from . import API
@@ -20,7 +20,7 @@ class WowApi(API):
         self.__realms = None
 
     @staticmethod
-    async def parse_armory_link(url: str) -> Union[dict[str, str], None]:
+    async def parse_armory_link(url: str) -> Optional[Dict[str, str]]:
         """Parses a World of Warcraft Armoury link and returns the character's name, realm, and region
 
         :param url: A World of Warcraft Armoury link such as https://worldofwarcraft.com/en-us/character/us/{slug}/{character}
@@ -43,7 +43,7 @@ class WowApi(API):
 
         return None
 
-    async def get_realm_slug(self, realm_name: str) -> Union[str, None]:
+    async def get_realm_slug(self, realm_name: str) -> Optional[str]:
         """Attempts to match user input with a WoW realm and return its slug
 
         :param realm_name: A string to query the realms index with (full name, id, short name, etc)
