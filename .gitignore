@@ -1,5 +1,3 @@
-tests/**
-tests
 **/__pycache__/**
 __pycache__
 .vscode
@@ -10,3 +8,6 @@ build
 build/**
 aiowowapi.egg-info
 aiowowapi.egg-info/**
+**/.pytest_cache/**
+.pytest_cache
+.mypy_cache

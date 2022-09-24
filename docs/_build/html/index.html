@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi docs &mdash; aiowowapi 2.0.3 documentation</title>
+  <title>aiowowapi docs &mdash; aiowowapi 2.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -29,6 +29,9 @@
         <div class="wy-side-nav-search" >
             <a href="#" class="icon icon-home"> aiowowapi
           </a>
+              <div class="version">
+                2.1.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -98,7 +101,6 @@ python -m pip install -U aiowowapi
 <h2>TODO<a class="headerlink" href="#todo" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Add caching for certain requests</p></li>
-<li><p>Less janky error handling</p></li>
 </ul>
 </section>
 <section id="requirements">
@@ -113,11 +115,8 @@ python -m pip install -U aiowowapi
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aiowowapi</span> <span class="kn">import</span> <span class="n">WowApi</span>
 
 <span class="k">async</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-    <span class="n">Client</span> <span class="o">=</span> <span class="n">WowApi</span><span class="p">(</span><span class="s1">&#39;&lt;CLIENT_ID&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;CLIENT_SECRET&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="n">request_debugging</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Client</span><span class="o">.</span><span class="n">Retail</span><span class="o">.</span><span class="n">Profile</span><span class="o">.</span><span class="n">get_character_profile_status</span><span class="p">(</span><span class="s1">&#39;illidan&#39;</span><span class="p">,</span> <span class="s1">&#39;adalyia&#39;</span><span class="p">))</span>
-
-<span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+    <span class="k">async</span> <span class="k">with</span> <span class="n">WowApi</span><span class="p">(</span><span class="s1">&#39;&lt;ID&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&lt;SECRET&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;us&#39;</span><span class="p">,</span> <span class="n">request_debugging</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">Client</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="k">await</span> <span class="n">Client</span><span class="o">.</span><span class="n">Retail</span><span class="o">.</span><span class="n">Profile</span><span class="o">.</span><span class="n">get_character_profile_status</span><span class="p">(</span><span class="s1">&#39;illidan&#39;</span><span class="p">,</span> <span class="s1">&#39;adalyia&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>

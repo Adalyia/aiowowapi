@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.0.3 documentation</title>
+  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,6 +30,9 @@
         <div class="wy-side-nav-search" >
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
+              <div class="version">
+                2.1.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,29 +78,15 @@
 <span id="aiowowapi-wowapi-module"></span><h1>aiowowapi.wowapi module<a class="headerlink" href="#module-aiowowapi.wowapi" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.wowapi.</span></span><span class="sig-name descname"><span class="pre">WowApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parallel_requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_request_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_retry_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_debugging</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.wowapi.WowApi" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.wowapi.</span></span><span class="sig-name descname"><span class="pre">WowApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.wowapi.WowApi" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <a class="reference internal" href="aiowowapi.api.html#aiowowapi.api.API" title="aiowowapi.api.API"><code class="xref py py-class docutils literal notranslate"><span class="pre">API</span></code></a></p>
-<p>This class contains some useful functions/QoL features for working with the World of Warcraft API. For additional arguments see the API class documentation.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<em>str</em>) – A Battle.net Project Client ID - Generated at <a class="reference external" href="https://develop.battle.net/access/clients">https://develop.battle.net/access/clients</a></p></li>
-<li><p><strong>client_secret</strong> (<em>str</em>) – A Battle.net Project Client Secret - Generated at <a class="reference external" href="https://develop.battle.net/access/clients">https://develop.battle.net/access/clients</a></p></li>
-<li><p><strong>client_region</strong> (<em>str</em><em>, </em><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><em>APIRegion</em></a><em>, </em><em>optional</em>) – The Battle.net/WoW API region which we submit requests to, defaults to APIRegion.US</p></li>
-<li><p><strong>max_parallel_requests</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of parallel aiohttp requests</p></li>
-<li><p><strong>max_request_retries</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of aiohttp request retries (min 1)</p></li>
-<li><p><strong>request_retry_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – The delay between aiohttp request retries (min 0) (This value is in seconds)</p></li>
-<li><p><strong>request_debugging</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether exceptions should be raised requests resulting in an HTTP error (if set to false requests resulting in an HTTP error will simply return None instead of raising an exception)</p></li>
-</ul>
-</dd>
-</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.format_wow_gold">
-<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format_wow_gold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.format_wow_gold" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format_wow_gold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">money</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.format_wow_gold" title="Permalink to this definition"></a></dt>
 <dd><p>Converts a WoW money value to a formatted string of Gold, Silver, and Copper</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input</strong> (<em>int</em>) – A WoW currency/money value in copper</p>
+<dd class="field-odd"><p><strong>money</strong> (<em>int</em>) – A WoW currency/money value in copper</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>{}g {}s {}c</p>
@@ -110,11 +99,11 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.get_realm_slug">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_slug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.get_realm_slug" title="Permalink to this definition"></a></dt>
-<dd><p>Attempts to match user input with a WoW realm and return it’s slug</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_slug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.get_realm_slug" title="Permalink to this definition"></a></dt>
+<dd><p>Attempts to match user input with a WoW realm and return its slug</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>input</strong> (<em>str</em>) – A string to query the realms index with (full name, id, short name, etc)</p>
+<dd class="field-odd"><p><strong>realm_name</strong> (<em>str</em>) – A string to query the realms index with (full name, id, short name, etc)</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A matching realm’s slug</p>
@@ -127,7 +116,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.parse_armory_link">
-<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.parse_armory_link" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.parse_armory_link" title="Permalink to this definition"></a></dt>
 <dd><p>Parses a World of Warcraft Armoury link and returns the character’s name, realm, and region</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>

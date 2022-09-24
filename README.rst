@@ -37,7 +37,6 @@ Current Features
 TODO
 -----
 * Add caching for certain requests
-* Less janky error handling
 
 Requirements
 -------------
@@ -51,13 +50,9 @@ Example
     from aiowowapi import WowApi
 
     async def main():
-        Client = WowApi('<CLIENT_ID>','<CLIENT_SECRET>', 'us', request_debugging=True)
+        async with WowApi('<ID>','<SECRET>', 'us', request_debugging=True) as Client:
+            print(await Client.Retail.Profile.get_character_profile_status('illidan', 'adalyia'))
 
-        print(await Client.Retail.Profile.get_character_profile_status('illidan', 'adalyia'))
-
-
-    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-    asyncio.run(main())
 
 Links
 ------

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.api module &mdash; aiowowapi 2.0.3 documentation</title>
+  <title>aiowowapi.api module &mdash; aiowowapi 2.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,6 +30,9 @@
         <div class="wy-side-nav-search" >
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
+              <div class="version">
+                2.1.0
+              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -75,22 +78,8 @@
 <span id="aiowowapi-api-module"></span><h1>aiowowapi.api module<a class="headerlink" href="#module-aiowowapi.api" title="Permalink to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="aiowowapi.api.API">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">API</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parallel_requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_request_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_retry_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_debugging</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.API" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">API</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_parallel_requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_request_retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_retry_delay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">request_debugging</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.API" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is our core API class with methods for interacting with Battle.net’s various APIs</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>client_id</strong> (<em>str</em>) – A Battle.net Project Client ID - Generated at <a class="reference external" href="https://develop.battle.net/access/clients">https://develop.battle.net/access/clients</a></p></li>
-<li><p><strong>client_secret</strong> (<em>str</em>) – A Battle.net Project Client Secret - Generated at <a class="reference external" href="https://develop.battle.net/access/clients">https://develop.battle.net/access/clients</a></p></li>
-<li><p><strong>client_region</strong> (<em>str</em><em>, </em><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><em>APIRegion</em></a><em>, </em><em>optional</em>) – The Battle.net/WoW API region which we submit requests to, defaults to APIRegion.US</p></li>
-<li><p><strong>max_parallel_requests</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of parallel aiohttp requests (Defaullt: 50)</p></li>
-<li><p><strong>max_request_retries</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum number of aiohttp request retries (min 1) (Default: 3)</p></li>
-<li><p><strong>request_retry_delay</strong> (<em>int</em><em>, </em><em>optional</em>) – The delay between aiohttp request retries (min 0) (This value is in seconds) (Default: 1)</p></li>
-<li><p><strong>request_debugging</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether exceptions should be raised requests resulting in an HTTP error (if set to false requests resulting in an HTTP error will simply return None instead of raising an exception)</p></li>
-</ul>
-</dd>
-</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.get_access_token">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_access_token</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_access_token" title="Permalink to this definition"></a></dt>
@@ -124,7 +113,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.get_locale">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_locale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a></span></span><a class="headerlink" href="#aiowowapi.api.API.get_locale" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_locale</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_locale" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the current locale being used for API requests</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -152,7 +141,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.get_region">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a></span></span><a class="headerlink" href="#aiowowapi.api.API.get_region" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_region</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_region" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the current region being used for API requests</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -166,7 +155,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.get_resource">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BasicAuth</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'GET'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_resource" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BasicAuth</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_resource" title="Permalink to this definition"></a></dt>
 <dd><p>Make an API request and return the response as a JSON dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -175,7 +164,7 @@
 <li><p><strong>api_endpoint</strong> (<em>str</em>) – The API endpoint following the regional hostname we wish to send a request to.</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – The additional arguments/parameters we need to send with the request, defaults to None</p></li>
 <li><p><strong>auth</strong> (<em>aiohttp.BasicAuth</em><em>, </em><em>optional</em>) – The aiohttp BasicAuth object to use for authentication, defaults to None</p></li>
-<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – The HTTP request method to be used, defaults to ‘GET’</p></li>
+<li><p><strong>method</strong> (<em>str</em><em>, </em><em>optional</em>) – The HTTP method to use for the request, defaults to “GET”</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -188,7 +177,7 @@
 <dd class="field-odd"><p>The response from the API as a JSON dictionary</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-even"><p>dict, none</p>
 </dd>
 </dl>
 </dd></dl>
@@ -212,7 +201,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.set_locale">
-<span class="sig-name descname"><span class="pre">set_locale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#aiowowapi.api.API.set_locale" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_locale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">locale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#aiowowapi.api.API" title="aiowowapi.api.API"><span class="pre">API</span></a></span></span><a class="headerlink" href="#aiowowapi.api.API.set_locale" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the locale we’ll use for API requests</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -226,7 +215,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.set_region">
-<span class="sig-name descname"><span class="pre">set_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#aiowowapi.api.API.set_region" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">set_region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion"><span class="pre">APIRegion</span></a></span></span><a class="headerlink" href="#aiowowapi.api.API.set_region" title="Permalink to this definition"></a></dt>
 <dd><p>Sets the region to be used for API requests</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -234,6 +223,12 @@
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference internal" href="#aiowowapi.api.InvalidRegionException" title="aiowowapi.api.InvalidRegionException"><strong>InvalidRegionException</strong></a> – Raised when the provided region isn’t supported/found</p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>The region that was set</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="aiowowapi.regions.html#aiowowapi.regions.APIRegion" title="aiowowapi.regions.APIRegion">APIRegion</a></p>
 </dd>
 </dl>
 </dd></dl>
@@ -243,8 +238,20 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="aiowowapi.api.AccessTokenException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">AccessTokenException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'An</span> <span class="pre">error</span> <span class="pre">was</span> <span class="pre">encountered</span> <span class="pre">retrieving</span> <span class="pre">an</span> <span class="pre">API</span> <span class="pre">access</span> <span class="pre">token'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.AccessTokenException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.WoWApiException" title="aiowowapi.api.WoWApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">WoWApiException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.ApiException" title="aiowowapi.api.ApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApiException</span></code></a></p>
 <p>Exception thrown when a null access token is provided</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of the occurring error</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="aiowowapi.api.ApiException">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">ApiException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'An</span> <span class="pre">error</span> <span class="pre">was</span> <span class="pre">encountered</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">API</span> <span class="pre">class.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.ApiException" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Generic exception type for our API</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>message</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of the occurring error</p>
@@ -255,7 +262,7 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="aiowowapi.api.InvalidLocaleException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">InvalidLocaleException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Invalid</span> <span class="pre">API</span> <span class="pre">Locale'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.InvalidLocaleException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.WoWApiException" title="aiowowapi.api.WoWApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">WoWApiException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.ApiException" title="aiowowapi.api.ApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApiException</span></code></a></p>
 <p>Exception thrown when an invalid/unsupported API Locale is provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -267,7 +274,7 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="aiowowapi.api.InvalidRegionException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">InvalidRegionException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Invalid</span> <span class="pre">API</span> <span class="pre">Region'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.InvalidRegionException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.WoWApiException" title="aiowowapi.api.WoWApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">WoWApiException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.ApiException" title="aiowowapi.api.ApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApiException</span></code></a></p>
 <p>Exception thrown when an invalid/unsupported API Region is provided</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -279,7 +286,7 @@
 <dl class="py exception">
 <dt class="sig sig-object py" id="aiowowapi.api.RequestException">
 <em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">RequestException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Error</span> <span class="pre">making</span> <span class="pre">API</span> <span class="pre">request'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.RequestException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.WoWApiException" title="aiowowapi.api.WoWApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">WoWApiException</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.ApiException" title="aiowowapi.api.ApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApiException</span></code></a></p>
 <p>Exception thrown when something goes wrong with an HTTP API request</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -290,21 +297,9 @@
 
 <dl class="py exception">
 <dt class="sig sig-object py" id="aiowowapi.api.RequestMethodException">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">RequestMethodException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Invalid</span> <span class="pre">Request</span> <span class="pre">Method</span> <span class="pre">Provided'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.RequestMethodException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.RequestException" title="aiowowapi.api.RequestException"><code class="xref py py-class docutils literal notranslate"><span class="pre">RequestException</span></code></a></p>
-<p>Exception thrown when an invalid HTTP request method is provided</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>message</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of the occurring error</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py exception">
-<dt class="sig sig-object py" id="aiowowapi.api.WoWApiException">
-<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">WoWApiException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'An</span> <span class="pre">error</span> <span class="pre">was</span> <span class="pre">encountered</span> <span class="pre">with</span> <span class="pre">wowapi'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.WoWApiException" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Generic exception type for our API</p>
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.api.</span></span><span class="sig-name descname"><span class="pre">RequestMethodException</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Invalid</span> <span class="pre">request</span> <span class="pre">method'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.api.RequestMethodException" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aiowowapi.api.ApiException" title="aiowowapi.api.ApiException"><code class="xref py py-class docutils literal notranslate"><span class="pre">ApiException</span></code></a></p>
+<p>Exception thrown when an invalid request method is given</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>message</strong> (<em>str</em><em>, </em><em>optional</em>) – Description of the occurring error</p>

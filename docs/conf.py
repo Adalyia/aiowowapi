@@ -12,9 +12,10 @@
 #
 import os
 import sys
+import re
 import sphinx_rtd_theme
 
-sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../src'))
 sys.path.append(os.path.abspath('extensions'))
 
 # -- Project information -----------------------------------------------------
@@ -24,7 +25,10 @@ copyright = '2022, Adalyia'
 author = 'Adalyia'
 
 # The full version, including alpha/beta/rc tags
-release = '2.0.3'
+version = ""
+with open("../setup.cfg") as f:
+    version = re.search(r'^version\s*=\s*([^\'"\n]*)', f.read(), re.MULTILINE).group(1)
+release = version
 
 
 # -- General configuration ---------------------------------------------------
@@ -50,8 +54,6 @@ source_suffix = {
 }
 
 master_doc = "index"
-
-exclude_patterns = ["_build"]
 
 # -- Options for HTML output -------------------------------------------------
 

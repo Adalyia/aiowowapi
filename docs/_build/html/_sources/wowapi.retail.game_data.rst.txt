@@ -1,7 +1,0 @@
-wowapi.retail.game\_data module
-===============================
-
-.. automodule:: wowapi.retail.game_data
-   :members:
-   :undoc-members:
-   :show-inheritance:
