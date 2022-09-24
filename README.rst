@@ -4,6 +4,9 @@
 .. image:: https://img.shields.io/pypi/pyversions/aiowowapi.svg
    :target: https://pypi.python.org/pypi/aiowowapi
    :alt: PyPI supported Python versions
+.. image:: https://github.com/Adalyia/aiowowapi/actions/workflows/tests.yml/badge.svg
+   :target: https://github.com/Adalyia/aiowowapi/actions/workflows/tests.yml
+   :alt: Test Status
 .. image:: https://readthedocs.org/projects/aiowowapi/badge/?version=latest
    :target: https://aiowowapi.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
