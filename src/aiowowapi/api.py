@@ -1,7 +1,7 @@
 import asyncio
 from datetime import datetime, timedelta
 from types import TracebackType
-from typing import Union, Optional, Type, Dict
+from typing import Union, Optional, Type, Dict, Any
 
 import aiohttp
 
@@ -14,19 +14,19 @@ class API:
                  request_retry_delay: Optional[int] = None, request_debugging: Optional[bool] = None):
         """A class with methods for interacting with Battle.net's various APIs
 
-        :param client_id: A Battle.net Project Client ID - Generated at https://develop.battle.net/access/clients
+        :param client_id: Battle.net Project Client ID - Generated at https://develop.battle.net/access/clients
         :type client_id: str
-        :param client_secret: A Battle.net Project Client Secret - Generated at https://develop.battle.net/access/clients
+        :param client_secret: Battle.net Project Client Secret - Generated at https://develop.battle.net/access/clients
         :type client_secret: str
         :param client_region: The Battle.net/WoW API region which we submit requests to, defaults to APIRegion.US
         :type client_region: str, APIRegion, optional
-        :param max_parallel_requests: The maximum number of parallel aiohttp requests (Defaullt: 50)
+        :param max_parallel_requests: The maximum number of parallel aiohttp requests (Default: 50)
         :type max_parallel_requests: int, optional
         :param max_request_retries: The maximum number of aiohttp request retries (min 1) (Default: 3)
         :type max_request_retries: int, optional
-        :param request_retry_delay: The delay between aiohttp request retries (min 0) (This value is in seconds) (Default: 1)
+        :param request_retry_delay: The delay between aiohttp request retries (Seconds - min 0)(Default: 1)
         :type request_retry_delay: int, optional
-        :param request_debugging: Whether exceptions should be raised requests resulting in an HTTP error (if set to false requests resulting in an HTTP error will simply return None instead of raising an exception)
+        :param request_debugging: Whether aiohttp request exceptions are raised or return None (Default: False)
         :type request_debugging: bool, optional
         """
 
@@ -35,19 +35,25 @@ class API:
         self.__client_region: APIRegion = self.set_region(client_region)
         self.__client_locale: str = self.__client_region.value['supported_locales'][0]
 
-        self.__access_tokens: Dict[str, Dict[str, Union[str, datetime]]] = {}
+        self.__access_tokens: Dict[str, Dict[str, Any]] = {}
 
-        self.__semaphore = asyncio.Semaphore(max_parallel_requests if max_parallel_requests is not None else 50)
+        self.__semaphore: asyncio.Semaphore = asyncio.Semaphore(
+            max_parallel_requests if max_parallel_requests is not None else 50
+        )
 
-        self.__max_request_retries = max_request_retries if max_request_retries is not None and max_request_retries > 1 else 3
+        self.__max_request_retries: int = max_request_retries if (
+            max_request_retries is not None and max_request_retries > 1
+        ) else 3
 
-        self.__request_retry_delay = request_retry_delay if request_retry_delay is not None and request_retry_delay > 0 else 1
+        self.__request_retry_delay: int = request_retry_delay if (
+            request_retry_delay is not None and request_retry_delay > 0
+        ) else 1
 
-        self.__request_debugging = request_debugging if request_debugging is not None else True
+        self.__request_debugging: bool = request_debugging if (request_debugging is not None) else True
 
-        self.__session: Union[aiohttp.ClientSession, None] = None
+        self.__session: Optional[aiohttp.ClientSession] = None
 
-        self.__is_context_manager = False
+        self.__is_context_manager: bool = False
 
     def __enter__(self) -> None:
         raise TypeError("Use 'async with' instead")
@@ -68,7 +74,7 @@ class API:
         if self.__session is not None and self.__session.closed is False:
             await self.__session.close()
 
-    async def get_region(self) -> str:
+    def get_region(self) -> str:
         """Returns the current region being used for API requests
 
         :return: The current region being used for API requests
@@ -76,7 +82,7 @@ class API:
         """
         return self.__client_region.name
 
-    async def get_locale(self) -> str:
+    def get_locale(self) -> str:
         """Returns the current locale being used for API requests
 
         :return: The current locale being used for API requests
@@ -90,8 +96,8 @@ class API:
         :param region: The desired region to be used for API requests
         :type region: str, APIRegion
         :raises InvalidRegionException: Raised when the provided region isn't supported/found
-        :return: The region that was set
-        :rtype: APIRegion
+        :return: The API object
+        :rtype: API
         """
         if region in list(APIRegion) and isinstance(region, APIRegion):
             self.__client_region = region
@@ -109,12 +115,14 @@ class API:
             raise InvalidRegionException('Invalid API Region {}, supported regions are {}'.format(
                 region, list(APIRegion.__members__.keys())))
 
-    def set_locale(self, locale: str) -> 'API':
+    def set_locale(self, locale: str) -> str:
         """Sets the locale we'll use for API requests
 
         :param locale: The desired locale to be used for API requests.
         :type locale: str
-        :raises InvalidLocaleException: Raised when the string given doesn't match any of the current region's supported locales
+        :raises InvalidLocaleException: Raised the input doesn't match any of the current region's supported locales
+        :return: The current locale being used for API requests
+        :rtype: str
         """
         if locale and locale in self.__client_region.value['supported_locales']:
             self.__client_locale = locale
@@ -122,9 +130,9 @@ class API:
             raise InvalidLocaleException('Invalid Regional Locale {}, supported locales for {} are {}'.format(
                 locale, self.__client_region.name, self.__client_region.value['supported_locales']))
 
-        return self
+        return self.__client_locale
 
-    async def get_hostname(self) -> str:
+    def get_hostname(self) -> str:
         """Returns the current region's hostname for Game API requests
 
         :return: The current region's hostname for Game API requests
@@ -132,7 +140,7 @@ class API:
         """
         return self.__client_region.value['game_api_hostname']
 
-    async def get_oauth_hostname(self) -> str:
+    def get_oauth_hostname(self) -> str:
         """Returns the current region's hostname for OAuth API requests
 
         :return: The current region's hostname for OAuth API requests
@@ -154,7 +162,7 @@ class API:
         else:
             endpoint = f"/oauth/token"
 
-            hostname = await self.get_oauth_hostname()
+            hostname = self.get_oauth_hostname()
 
             params = {'grant_type': 'client_credentials'}
 
@@ -192,7 +200,7 @@ class API:
                            params: Optional[dict] = None,
                            auth: Optional[aiohttp.BasicAuth] = None,
                            method: Optional[str] = None,
-                           ) -> Union[dict, None]:
+                           ) -> Optional[dict]:
         """Make an API request and return the response as a JSON dictionary
 
         :param hostname: The hostname to make the request to
@@ -212,12 +220,12 @@ class API:
         """
 
         if method is None:
-            method: str = "GET"
+            method = "GET"
 
         async with self.__semaphore:
             current_attempt: int = 1
-            local_session: Optional[aiohttp.ClientSession] = aiohttp.ClientSession() \
-                if self.__is_context_manager is False else None
+            local_session: Optional[aiohttp.ClientSession] = aiohttp.ClientSession() if \
+                (self.__is_context_manager) is False else None
 
             if self.__is_context_manager is True and (self.__session is None or self.__session.closed):
                 self.__session = aiohttp.ClientSession()
@@ -226,11 +234,15 @@ class API:
                 try:
 
                     supported_methods = {
-                        "GET": local_session.get if self.__is_context_manager is False and local_session is not None else self.__session.get,
-                        "POST": local_session.post if self.__is_context_manager is False and local_session is not None else self.__session.post,
+                        "GET": local_session.get if (
+                            self.__is_context_manager is False and local_session is not None
+                        ) else self.__session.get,
+                        "POST": local_session.post if (
+                            self.__is_context_manager is False and local_session is not None
+                        ) else self.__session.post,
                     }
 
-                    if method not in supported_methods:
+                    if method.upper() not in supported_methods:
                         raise RequestMethodException('Invalid HTTP request method {}, supported methods are {}'.format(
                             method, list(supported_methods.keys())))
 

@@ -8,6 +8,7 @@ An asynchronous wrapper for the World of Warcraft API
 :license: MIT, see LICENSE for more details.
 
 """
+
 from .api import *
 from .regions import *
 from .wowapi import *

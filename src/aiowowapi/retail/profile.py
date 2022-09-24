@@ -1,19 +1,16 @@
-from typing import Union
+from typing import Optional
 
 
 class Profile:
-    """This class contains all API endpoints for the Profile category of the Retail World of Warcraft API
-
-    :param api: An instance of our generic API object
-    :type api: API
-    """
-
     def __init__(self, api):
-        """Constructor method
+        """This class contains all API endpoints for the Profile category of the Retail World of Warcraft API
+
+        :param api: An instance of our generic API object
+        :type api: API
         """
         self.api = api
 
-    async def get_profile_api_resource(self, namespace: str, endpoint: str, params: dict = None) -> Union[dict, None]:
+    async def get_profile_api_resource(self, namespace: str, endpoint: str, params: dict = None) -> Optional[dict]:
         """Generic method for retrieving data from a Profile API endpoint
 
         :param namespace: The namespace of the resource we're trying to access
@@ -25,9 +22,9 @@ class Profile:
         :return: The result of the API request (Warning: Can be None/Null)
         :rtype: dict
         """
-        region = await self.api.get_region()
-        locale = await self.api.get_locale()
-        hostname = await self.api.get_hostname()
+        region = self.api.get_region()
+        locale = self.api.get_locale()
+        hostname = self.api.get_hostname()
         token = await self.api.get_access_token()
 
         if params is None:
@@ -43,7 +40,7 @@ class Profile:
 
     async def get_character_achievements_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of the achievements a character has completed.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -58,7 +55,7 @@ class Profile:
 
     async def get_character_achievement_statistics(self, realm_slug: str, character_name: str):
         """Returns a character's statistics as they pertain to achievements.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -76,7 +73,7 @@ class Profile:
 
     async def get_character_appearance_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's appearance settings.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -94,7 +91,7 @@ class Profile:
 
     async def get_character_collections_index(self, realm_slug: str, character_name: str):
         """Returns an index of collection types for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -109,7 +106,7 @@ class Profile:
 
     async def get_character_mounts_collection_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of the mounts a character has obtained.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -124,7 +121,7 @@ class Profile:
 
     async def get_character_pets_collection_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of the battle pets a character has obtained.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -142,7 +139,7 @@ class Profile:
 
     async def get_character_encounters_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's encounters.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -157,7 +154,7 @@ class Profile:
 
     async def get_character_dungeons(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's completed dungeons.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -172,7 +169,7 @@ class Profile:
 
     async def get_character_raids(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's completed raids.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -190,7 +187,7 @@ class Profile:
 
     async def get_character_equipment_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of the items equipped by a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -208,7 +205,7 @@ class Profile:
 
     async def get_character_hunter_pets_summary(self, realm_slug: str, character_name: str):
         """If the character is a hunter, returns a summary of the character's hunter pets. Otherwise, returns an HTTP 404 Not Found error.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -226,7 +223,7 @@ class Profile:
 
     async def get_character_media_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of the media assets available for a character (such as an avatar render).
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -244,7 +241,7 @@ class Profile:
 
     async def get_character_mythic_keystone_profile_index(self, realm_slug: str, character_name: str):
         """Returns the Mythic Keystone profile index for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -261,7 +258,7 @@ class Profile:
         """Returns the Mythic Keystone season details for a character.
 
 Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -281,7 +278,7 @@ Returns a 404 Not Found for characters that have not yet completed a Mythic Keys
 
     async def get_character_professions_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of professions for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -299,7 +296,7 @@ Returns a 404 Not Found for characters that have not yet completed a Mythic Keys
 
     async def get_character_profile_summary(self, realm_slug: str, character_name: str):
         """Returns a profile summary for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -322,7 +319,7 @@ A client requests and stores information about a character, including its unique
 After 30 days, the client makes a request to the status endpoint to verify if the character information is still valid.
 If character cannot be found, is not valid, or the characters IDs do not match, the client removes the information from their application.
 If the character is valid and the character IDs match, the client retains the data for another 30 days.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -340,7 +337,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_pvp_bracket_statistics(self, realm_slug: str, character_name: str, pvp_bracket: str):
         """Returns the PvP bracket statistics for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -357,7 +354,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_pvp_summary(self, realm_slug: str, character_name: str):
         """Returns a PvP summary for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -375,7 +372,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_quests(self, realm_slug: str, character_name: str):
         """Returns a character's active quests as well as a link to the character's completed quests.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -390,7 +387,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_completed_quests(self, realm_slug: str, character_name: str):
         """Returns a list of quests that a character has completed.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -408,7 +405,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_reputations_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's reputations.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -426,7 +423,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_soulbinds(self, realm_slug: str, character_name: str):
         """Returns a character's soulbinds.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -444,7 +441,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_specializations_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of a character's specializations.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -462,7 +459,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_statistics_summary(self, realm_slug: str, character_name: str):
         """Returns a statistics summary for a character.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -480,7 +477,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_character_titles_summary(self, realm_slug: str, character_name: str):
         """Returns a summary of titles a character has obtained.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param character_name: The lowercase name of the character.
@@ -498,7 +495,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_guild(self, realm_slug: str, name_slug: str):
         """Returns a single guild by its name and realm.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param name_slug: The slug of the guild.
@@ -513,7 +510,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_guild_activity(self, realm_slug: str, name_slug: str):
         """Returns a single guild's activity by name and realm.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param name_slug: The slug of the guild.
@@ -528,7 +525,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_guild_achievements(self, realm_slug: str, name_slug: str):
         """Returns a single guild's achievements by name and realm.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param name_slug: The slug of the guild.
@@ -543,7 +540,7 @@ If the character is valid and the character IDs match, the client retains the da
 
     async def get_guild_roster(self, realm_slug: str, name_slug: str):
         """Returns a single guild's roster by its name and realm.
-        
+
         :param realm_slug: The slug of the realm.
         :type realm_slug: str
         :param name_slug: The slug of the guild.
@@ -556,4 +553,4 @@ If the character is valid and the character IDs match, the client retains the da
 
         return await self.get_profile_api_resource(namespace, endpoint)
 
-# endregion
+    # endregion

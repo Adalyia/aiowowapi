@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.1.0 documentation</title>
+  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.0
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -116,11 +116,11 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.parse_armory_link">
-<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.parse_armory_link" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.parse_armory_link" title="Permalink to this definition"></a></dt>
 <dd><p>Parses a World of Warcraft Armoury link and returns the character’s name, realm, and region</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – A World of Warcraft Armoury link such as <a class="reference external" href="https://worldofwarcraft.com/en-us/character/us">https://worldofwarcraft.com/en-us/character/us</a>/{slug}/{character}</p>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – A WoW armoury link (ex: <a class="reference external" href="https://worldofwarcraft.com/en-us/character/us">https://worldofwarcraft.com/en-us/character/us</a>/{slug}/{character})</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>{‘name’: name, ‘realm’: realm_slug, ‘region’: region}</p>

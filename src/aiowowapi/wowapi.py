@@ -1,6 +1,6 @@
 import re
-from typing import Union, Dict, Optional
-from urllib.parse import *
+from typing import Dict, Optional
+from urllib.parse import unquote
 
 from . import API
 from .classic.classic import ClassicApi
@@ -23,7 +23,7 @@ class WowApi(API):
     async def parse_armory_link(url: str) -> Optional[Dict[str, str]]:
         """Parses a World of Warcraft Armoury link and returns the character's name, realm, and region
 
-        :param url: A World of Warcraft Armoury link such as https://worldofwarcraft.com/en-us/character/us/{slug}/{character}
+        :param url: A WoW armoury link (ex: https://worldofwarcraft.com/en-us/character/us/{slug}/{character})
         :type url: str
         :return: {'name': name, 'realm': realm_slug, 'region': region}
         :rtype: dict
@@ -31,7 +31,7 @@ class WowApi(API):
         string = unquote(str(url))
 
         found = re.search(
-            r"\/(us|eu|kr|tw|cn)\/([0-9\-\w]*)\/([a-zA-Z\w]*)", string, re.U
+            r"/(us|eu|kr|tw|cn)/([0-9\-\w]*)/([a-zA-Z\w]*)", string, re.U
         )
 
         if found and found.group() and len(found.groups()) == 3:

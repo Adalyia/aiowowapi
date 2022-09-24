@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.retail.game_data module &mdash; aiowowapi 2.1.0 documentation</title>
+  <title>aiowowapi.retail.game_data module &mdash; aiowowapi 2.1.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -31,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.0
+                2.1.1
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -80,12 +80,6 @@
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.retail.game_data.</span></span><span class="sig-name descname"><span class="pre">GameData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This class contains all API endpoints for the GameData category of the Retail World of Warcraft API</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>api</strong> (<a class="reference internal" href="aiowowapi.api.html#aiowowapi.api.API" title="aiowowapi.api.API"><em>API</em></a>) – An instance of our generic API object</p>
-</dd>
-</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_achievement">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_achievement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">achievement_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_achievement" title="Permalink to this definition"></a></dt>
@@ -386,11 +380,18 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_covenant_media">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_covenant_media</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">covenant_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_covenant_media" title="Permalink to this definition"></a></dt>
-<dd><p>Returns media for a covenant by ID.
-:param covenant_id: The ID of the covenant.
-:type covenant_id: int
-:return: Returns media for a covenant by ID.
-:rtype: dict</p>
+<dd><p>Returns media for a covenant by ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>covenant_id</strong> (<em>int</em>) – The ID of the covenant.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns media for a covenant by ID.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -854,15 +855,11 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_media_search">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_media_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tags</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orderby</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_media_search" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_media_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_media_search" title="Permalink to this definition"></a></dt>
 <dd><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>tags</strong> (<em>str</em>) – The media document type as derived from the URL. For example, /wow/media/item/{id} will have tag ‘item’. (example search field)</p></li>
-<li><p><strong>orderby</strong> (<em>str</em>) – The field to sort the result set by.</p></li>
-<li><p><strong>_page</strong> (<em>int</em>) – The result page number.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
@@ -1856,15 +1853,11 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_realm_search">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timezone</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orderby</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_page</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_realm_search" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_realm_search" title="Permalink to this definition"></a></dt>
 <dd><p>Performs a search of realms. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>timezone</strong> (<em>str</em>) – The timezone of the realm. (example search field)</p></li>
-<li><p><strong>orderby</strong> (<em>str</em>) – The field to sort the result set by.</p></li>
-<li><p><strong>_page</strong> (<em>int</em>) – The result page number.</p></li>
-</ul>
+<dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Performs a search of realms. The fields below are provided for example. For more detail see the Search Guide.</p>

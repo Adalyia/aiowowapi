@@ -31,7 +31,8 @@ Current Features
 
 TODO
 -----
-* Add caching for certain requests
+* Add caching for certain requests (e.g. character profile)
+* Greater test coverage
 
 Requirements
 -------------

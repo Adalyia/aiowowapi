@@ -1,20 +1,17 @@
-from typing import Union, Optional
+from typing import Optional
 
 
 class GameData:
-    """This class contains all API endpoints for the GameData category of the Classic World of Warcraft API
-
-    :param api: An instance of our generic API object
-    :type api: API
-    """
-
     def __init__(self, api):
-        """Constructor method
+        """This class contains all API endpoints for the GameData category of the Classic World of Warcraft API
+
+        :param api: An instance of our generic API object
+        :type api: API
         """
         self.api = api
 
-    async def get_game_api_resource(self, namespace: str, endpoint: str, params: dict = None) -> Union[dict, None]:
-        """Generic method for retrieving data from a Game Data API endpoint
+    async def get_game_api_resource(self, namespace: str, endpoint: str, params: dict = None) -> Optional[dict]:
+        """Generic method for retrieving data from a Classic Game Data API endpoint
 
         :param namespace: The namespace of the resource we're trying to access
         :type namespace: str
@@ -25,9 +22,9 @@ class GameData:
         :return: The result of the API request (Warning: Can be None/Null)
         :rtype: dict
         """
-        region = await self.api.get_region()
-        locale = await self.api.get_locale()
-        hostname = await self.api.get_hostname()
+        region = self.api.get_region()
+        locale = self.api.get_locale()
+        hostname = self.api.get_hostname()
         token = await self.api.get_access_token()
 
         if params is None:
@@ -344,23 +341,18 @@ Depending on the number of active auctions on the specified connected realm, the
     # endregion
     # region Media Search API
 
-    async def get_media_search(self, tags: Optional[str] = None, orderby: Optional[str] = None,
-                               _page: Optional[int] = None):
+    async def get_media_search(self, search_params: Optional[dict] = None):
         """Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.
 
-        :param tags: The media document type as derived from the URL. For example, /wow/media/item/{id} will have tag 'item'. (example search field)
-        :type tags: str
-        :param orderby: The field to sort the result set by.
-        :type orderby: str
-        :param _page: The result page number.
-        :type _page: int
+        :param search_params: Search parameters
+        :type search_params: dict
         :return: Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.
         :rtype: dict
         """
         endpoint = f"/data/wow/search/media"
         namespace = "static-{region}"
 
-        return await self.get_game_api_resource(namespace, endpoint)
+        return await self.get_game_api_resource(namespace, endpoint, params=search_params)
 
     # endregion
     # region Playable Class API
@@ -596,23 +588,18 @@ Depending on the number of active auctions on the specified connected realm, the
 
         return await self.get_game_api_resource(namespace, endpoint)
 
-    async def get_realm_search(self, timezone: Optional[str] = None, orderby: Optional[str] = None,
-                               _page: Optional[int] = None):
+    async def get_realm_search(self, search_params: Optional[dict] = None):
         """Performs a search of realms. The fields below are examples only. For more detail see the Search Guide.
 
-        :param timezone: The timezone of the realm. (example search field)
-        :type timezone: str
-        :param orderby: The field to sort the result set by.
-        :type orderby: str
-        :param _page: The result page number.
-        :type _page: int
+        :param search_params: Search parameters
+        :type search_params: dict
         :return: Performs a search of realms. The fields below are examples only. For more detail see the Search Guide.
         :rtype: dict
         """
         endpoint = f"/data/wow/search/realm"
         namespace = "dynamic-classic-{region}"
 
-        return await self.get_game_api_resource(namespace, endpoint)
+        return await self.get_game_api_resource(namespace, endpoint, params=search_params)
 
     # endregion
     # region Region API
@@ -655,4 +642,4 @@ Depending on the number of active auctions on the specified connected realm, the
 
         return await self.get_game_api_resource(namespace, endpoint)
 
-# endregion
+    # endregion
