@@ -10,7 +10,8 @@ class APIRegion(Enum):
     EU: dict = {
         'oauth_api_hostname': 'https://eu.battle.net{api_endpoint}',
         'game_api_hostname': 'https://eu.api.blizzard.com{api_endpoint}',
-        'supported_locales': ['en_GB', 'es_ES', 'fr_FR', 'ru_RU', 'de_DE', 'pt_PT', 'it_IT']
+        'supported_locales': ['en_GB', 'es_ES', 'fr_FR', 'ru_RU', 'de_DE',
+                              'pt_PT', 'it_IT']
     }
     KR: dict = {
         'oauth_api_hostname': 'https://kr.battle.net{api_endpoint}',

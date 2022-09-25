@@ -9,7 +9,9 @@ from .retail.retail import RetailApi
 
 class WowApi(API):
     def __init__(self, *args, **kwargs):
-        """This class contains some useful functions/QoL features for working with the World of Warcraft API.
+        """This class contains some useful functions/QoL features for working
+        with the World of Warcraft API.
+
         For additional arguments see the API class documentation.
         """
         super().__init__(*args, **kwargs)
@@ -21,9 +23,11 @@ class WowApi(API):
 
     @staticmethod
     async def parse_armory_link(url: str) -> Optional[Dict[str, str]]:
-        """Parses a World of Warcraft Armoury link and returns the character's name, realm, and region
+        """Parses a World of Warcraft Armoury link and returns the character's
+        name, realm, and region
 
-        :param url: A WoW armoury link (ex: https://worldofwarcraft.com/en-us/character/us/{slug}/{character})
+        :param url: A WoW armoury link (ex:
+            https://worldofwarcraft.com/en-us/character/us/{slug}/{character})
         :type url: str
         :return: {'name': name, 'realm': realm_slug, 'region': region}
         :rtype: dict
@@ -46,7 +50,8 @@ class WowApi(API):
     async def get_realm_slug(self, realm_name: str) -> Optional[str]:
         """Attempts to match user input with a WoW realm and return its slug
 
-        :param realm_name: A string to query the realms index with (full name, id, short name, etc)
+        :param realm_name: A string to query the realms index with (
+            full name, id, short name, etc)
         :type realm_name: str
         :return: A matching realm's slug
         :rtype: str
@@ -54,9 +59,11 @@ class WowApi(API):
         if self.__realms:
             for realm in self.__realms:
                 realm_name = str(realm_name).lower()
-                if realm_name in str(realm['name']).lower() or realm_name in str(
+                if realm_name in str(
+                        realm['name']).lower() or realm_name in str(
                         realm['fixed']).lower() or realm_name in str(
-                        realm['slug']).lower() or realm_name == str(realm['id']).lower():
+                        realm['slug']).lower() or realm_name == str(
+                        realm['id']).lower():
                     return realm['slug']
         else:
             data = await self.Retail.GameData.get_realms_index()
@@ -65,7 +72,9 @@ class WowApi(API):
                 self.__realms = []
                 for realm in data['realms']:
                     self.__realms.append(
-                        {'name': realm['name'], 'fixed': str(realm['name']).replace(" ", ""), 'slug': realm['slug'],
+                        {'name': realm['name'],
+                         'fixed': str(realm['name']).replace(" ", ""),
+                         'slug': realm['slug'],
                          'id': realm['id']})
                 return await self.get_realm_slug(realm_name)
 
@@ -73,7 +82,8 @@ class WowApi(API):
 
     @staticmethod
     async def format_wow_gold(money: int) -> str:
-        """Converts a WoW money value to a formatted string of Gold, Silver, and Copper
+        """Converts a WoW money value to a formatted string of
+        Gold, Silver, and Copper
 
         :param money: A WoW currency/money value in copper
         :type money: int

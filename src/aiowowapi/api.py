@@ -9,31 +9,42 @@ from .regions import APIRegion
 
 
 class API:
-    def __init__(self, client_id: str, client_secret: str, client_region: Union[APIRegion, str], *,
-                 max_parallel_requests: Optional[int] = None, max_request_retries: Optional[int] = None,
-                 request_retry_delay: Optional[int] = None, request_debugging: Optional[bool] = None):
+    def __init__(self, client_id: str, client_secret: str,
+                 client_region: Union[APIRegion, str], *,
+                 max_parallel_requests: Optional[int] = None,
+                 max_request_retries: Optional[int] = None,
+                 request_retry_delay: Optional[int] = None,
+                 request_debugging: Optional[bool] = None):
         """A class with methods for interacting with Battle.net's various APIs
 
-        :param client_id: Battle.net Project Client ID - Generated at https://develop.battle.net/access/clients
+        :param client_id: Battle.net Project Client ID -
+            Generated at https://develop.battle.net/access/clients
         :type client_id: str
-        :param client_secret: Battle.net Project Client Secret - Generated at https://develop.battle.net/access/clients
+        :param client_secret: Battle.net Project Client Secret -
+            Generated at https://develop.battle.net/access/clients
         :type client_secret: str
-        :param client_region: The Battle.net/WoW API region which we submit requests to, defaults to APIRegion.US
+        :param client_region: The Battle.net/WoW API region which we submit
+            requests to, defaults to APIRegion.US
         :type client_region: str, APIRegion, optional
-        :param max_parallel_requests: The maximum number of parallel aiohttp requests (Default: 50)
+        :param max_parallel_requests: The maximum number of parallel aiohttp
+            requests (Default: 50)
         :type max_parallel_requests: int, optional
-        :param max_request_retries: The maximum number of aiohttp request retries (min 1) (Default: 3)
+        :param max_request_retries: The maximum number of aiohttp request
+            retries (min 1) (Default: 3)
         :type max_request_retries: int, optional
-        :param request_retry_delay: The delay between aiohttp request retries (Seconds - min 0)(Default: 1)
+        :param request_retry_delay: The delay between aiohttp request retries
+            (Seconds - min 0)(Default: 1)
         :type request_retry_delay: int, optional
-        :param request_debugging: Whether aiohttp request exceptions are raised or return None (Default: False)
+        :param request_debugging: Whether aiohttp request exceptions are
+            or return None (Default: False)
         :type request_debugging: bool, optional
         """
 
         self.__client_id: str = client_id
         self.__client_secret: str = client_secret
         self.__client_region: APIRegion = self.set_region(client_region)
-        self.__client_locale: str = self.__client_region.value['supported_locales'][0]
+        self.__client_locale: str = \
+            self.__client_region.value['supported_locales'][0]
 
         self.__access_tokens: Dict[str, Dict[str, Any]] = {}
 
@@ -41,15 +52,16 @@ class API:
             max_parallel_requests if max_parallel_requests is not None else 50
         )
 
-        self.__max_request_retries: int = max_request_retries if (
-            max_request_retries is not None and max_request_retries > 1
-        ) else 3
+        self.__max_request_retries: int = max_request_retries if \
+            (max_request_retries is not None) and (max_request_retries > 1) \
+            else 3
 
-        self.__request_retry_delay: int = request_retry_delay if (
-            request_retry_delay is not None and request_retry_delay > 0
-        ) else 1
+        self.__request_retry_delay: int = request_retry_delay if \
+            (request_retry_delay is not None) and (request_retry_delay > 0) \
+            else 1
 
-        self.__request_debugging: bool = request_debugging if (request_debugging is not None) else True
+        self.__request_debugging: bool = request_debugging if \
+            (request_debugging is not None) else True
 
         self.__session: Optional[aiohttp.ClientSession] = None
 
@@ -95,7 +107,8 @@ class API:
 
         :param region: The desired region to be used for API requests
         :type region: str, APIRegion
-        :raises InvalidRegionException: Raised when the provided region isn't supported/found
+        :raises InvalidRegionException: Raised when the provided region isn't
+            supported/found
         :return: The API object
         :rtype: API
         """
@@ -109,26 +122,33 @@ class API:
                     self.__client_region = i
                     self.__client_locale = i.value['supported_locales'][0]
                     return i
-            raise InvalidRegionException('Invalid API Region {}, supported regions are {}'.format(
-                region, list(APIRegion.__members__.keys())))
+            raise InvalidRegionException(
+                'Invalid API Region {}, supported regions are {}'.format(
+                    region, list(APIRegion.__members__.keys())))
         else:
-            raise InvalidRegionException('Invalid API Region {}, supported regions are {}'.format(
-                region, list(APIRegion.__members__.keys())))
+            raise InvalidRegionException(
+                'Invalid API Region {}, supported regions are {}'.format(
+                    region, list(APIRegion.__members__.keys())))
 
     def set_locale(self, locale: str) -> str:
         """Sets the locale we'll use for API requests
 
         :param locale: The desired locale to be used for API requests.
         :type locale: str
-        :raises InvalidLocaleException: Raised the input doesn't match any of the current region's supported locales
+        :raises InvalidLocaleException: Raised the input doesn't match any of
+            the current region's supported locales
         :return: The current locale being used for API requests
         :rtype: str
         """
-        if locale and locale in self.__client_region.value['supported_locales']:
+        if locale and \
+                (locale in self.__client_region.value['supported_locales']):
             self.__client_locale = locale
         else:
-            raise InvalidLocaleException('Invalid Regional Locale {}, supported locales for {} are {}'.format(
-                locale, self.__client_region.name, self.__client_region.value['supported_locales']))
+            raise InvalidLocaleException(
+                'Invalid Regional Locale {}, supported locales for {} are {}'
+                .format(
+                    locale, self.__client_region.name,
+                    self.__client_region.value['supported_locales']))
 
         return self.__client_locale
 
@@ -149,15 +169,18 @@ class API:
         return self.__client_region.value['oauth_api_hostname']
 
     async def get_access_token(self) -> str:
-        """Returns and / or generates an API access token using the provided credentials in the class constructor
+        """Returns and / or generates an API access token using the provided
+        credentials in the class constructor
 
-        :raises RequestException: Raised when we encounter an issue when making an aiohttp request.
+        :raises RequestException: Raised when we encounter an issue when making
+            an aiohttp request.
         :return: A Battle.net OAuth Access Token
         :rtype: str
         """
 
         if self.__client_region.name in self.__access_tokens and \
-                self.__access_tokens[self.__client_region.name]['Expires'] > datetime.now():
+                self.__access_tokens[self.__client_region.name][
+                    'Expires'] > datetime.now():
             return self.__access_tokens[self.__client_region.name]['Token']
         else:
             endpoint = f"/oauth/token"
@@ -167,16 +190,21 @@ class API:
             params = {'grant_type': 'client_credentials'}
 
             data = await self.get_resource(hostname, endpoint, params,
-                                           auth=aiohttp.BasicAuth(self.__client_id, self.__client_secret),
+                                           auth=aiohttp.BasicAuth(
+                                               self.__client_id,
+                                               self.__client_secret),
                                            method="POST")
 
             if data is None:
                 raise AccessTokenException(
-                    'Failed to retrieve an access token, verify your credentials & internet connectivity.')
+                    'Failed to retrieve an access token, verify your '
+                    'credentials & internet connectivity.')
 
-            expires = datetime.now() + timedelta(seconds=data['expires_in'] - 60)
+            expires = datetime.now() + timedelta(
+                seconds=data['expires_in'] - 60)
 
-            self.__access_tokens[self.__client_region.name] = {'Token': data['access_token'], 'Expires': expires}
+            self.__access_tokens[self.__client_region.name] = {
+                'Token': data['access_token'], 'Expires': expires}
 
             return self.__access_tokens[self.__client_region.name]['Token']
 
@@ -205,16 +233,22 @@ class API:
 
         :param hostname: The hostname to make the request to
         :type hostname: str
-        :param api_endpoint: The API endpoint following the regional hostname we wish to send a request to.
+        :param api_endpoint: The API endpoint following the regional hostname
+            we wish to send a request to.
         :type api_endpoint: str
-        :param params: The additional arguments/parameters we need to send with the request, defaults to None
+        :param params: The additional arguments/parameters we need to send with
+            the request, defaults to None
         :type params: dict, optional
-        :param auth: The aiohttp BasicAuth object to use for authentication, defaults to None
+        :param auth: The aiohttp BasicAuth object to use for authentication,
+            defaults to None
         :type auth: aiohttp.BasicAuth, optional
-        :param method: The HTTP method to use for the request, defaults to "GET"
+        :param method: The HTTP method to use for the request,
+            defaults to "GET"
         :type method: str, optional
-        :raises RequestMethodException: Raised when an invalid HTTP request method is selected.
-        :raises RequestException: Raised when we encounter an issue when making an aiohttp request.
+        :raises RequestMethodException: Raised when an invalid HTTP request
+            method is selected.
+        :raises RequestException: Raised when we encounter an issue when making
+            an aiohttp request.
         :return: The response from the API as a JSON dictionary
         :rtype: dict, none
         """
@@ -224,27 +258,34 @@ class API:
 
         async with self.__semaphore:
             current_attempt: int = 1
-            local_session: Optional[aiohttp.ClientSession] = aiohttp.ClientSession() if \
-                (self.__is_context_manager) is False else None
+            local_session: Optional[
+                aiohttp.ClientSession] = aiohttp.ClientSession() if \
+                self.__is_context_manager is False else None
 
-            if self.__is_context_manager is True and (self.__session is None or self.__session.closed):
+            if self.__is_context_manager is True and (
+                    self.__session is None or self.__session.closed):
                 self.__session = aiohttp.ClientSession()
             result: Optional[Dict] = None
-            while current_attempt <= self.__max_request_retries and result is None:
+            while (current_attempt <= self.__max_request_retries) and \
+                    (result is None):
                 try:
 
                     supported_methods = {
-                        "GET": local_session.get if (
-                            self.__is_context_manager is False and local_session is not None
-                        ) else self.__session.get,
-                        "POST": local_session.post if (
-                            self.__is_context_manager is False and local_session is not None
-                        ) else self.__session.post,
+                        "GET": local_session.get if
+                        (self.__is_context_manager is False and
+                         local_session is not None)
+                        else self.__session.get,
+                        "POST": local_session.post if
+                        (self.__is_context_manager is False and
+                         local_session is not None)
+                        else self.__session.post,
                     }
 
                     if method.upper() not in supported_methods:
-                        raise RequestMethodException('Invalid HTTP request method {}, supported methods are {}'.format(
-                            method, list(supported_methods.keys())))
+                        raise RequestMethodException(
+                            'Invalid HTTP request method {}, supported '
+                            'methods are {}'.format(
+                                method, list(supported_methods.keys())))
 
                     async with supported_methods[method](
                             hostname.format(api_endpoint=api_endpoint),
@@ -257,7 +298,8 @@ class API:
 
                         response.raise_for_status()
 
-                    if local_session is not None and local_session.closed is False:
+                    if (local_session is not None) and \
+                            (local_session.closed is False):
                         await local_session.close()
 
                 except aiohttp.ClientError:
@@ -277,7 +319,8 @@ class ApiException(Exception):
     :type message: str, optional
     """
 
-    def __init__(self, message: str = "An error was encountered with the API class."):
+    def __init__(self,
+                 message: str = "An error was encountered in the API class."):
         super().__init__(message)
 
 
@@ -288,7 +331,9 @@ class AccessTokenException(ApiException):
     :type message: str, optional
     """
 
-    def __init__(self, message: str = "An error was encountered retrieving an API access token"):
+    def __init__(self,
+                 message: str = "An error was encountered retrieving an API "
+                                "access token"):
         super().__init__(message)
 
 

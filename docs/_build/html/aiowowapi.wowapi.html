@@ -83,7 +83,8 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.format_wow_gold">
 <em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">format_wow_gold</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">money</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.format_wow_gold" title="Permalink to this definition"></a></dt>
-<dd><p>Converts a WoW money value to a formatted string of Gold, Silver, and Copper</p>
+<dd><p>Converts a WoW money value to a formatted string of
+Gold, Silver, and Copper</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>money</strong> (<em>int</em>) – A WoW currency/money value in copper</p>
@@ -103,7 +104,8 @@
 <dd><p>Attempts to match user input with a WoW realm and return its slug</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>realm_name</strong> (<em>str</em>) – A string to query the realms index with (full name, id, short name, etc)</p>
+<dd class="field-odd"><p><strong>realm_name</strong> (<em>str</em>) – A string to query the realms index with (
+full name, id, short name, etc)</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A matching realm’s slug</p>
@@ -117,10 +119,12 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.wowapi.WowApi.parse_armory_link">
 <em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse_armory_link</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.wowapi.WowApi.parse_armory_link" title="Permalink to this definition"></a></dt>
-<dd><p>Parses a World of Warcraft Armoury link and returns the character’s name, realm, and region</p>
+<dd><p>Parses a World of Warcraft Armoury link and returns the character’s
+name, realm, and region</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – A WoW armoury link (ex: <a class="reference external" href="https://worldofwarcraft.com/en-us/character/us">https://worldofwarcraft.com/en-us/character/us</a>/{slug}/{character})</p>
+<dd class="field-odd"><p><strong>url</strong> (<em>str</em>) – A WoW armoury link (ex:
+<a class="reference external" href="https://worldofwarcraft.com/en-us/character/us">https://worldofwarcraft.com/en-us/character/us</a>/{slug}/{character})</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>{‘name’: name, ‘realm’: realm_slug, ‘region’: region}</p>

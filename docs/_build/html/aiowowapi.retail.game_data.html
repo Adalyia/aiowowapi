@@ -91,9 +91,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an achievement by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -104,9 +101,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of achievement categories.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -122,9 +116,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an achievement category by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -139,9 +130,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for an achievement by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -153,35 +141,29 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of achievements.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_auctions">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_auctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connected_realm_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_auctions" title="Permalink to this definition"></a></dt>
-<dd><p>Returns all active auctions for a connected realm.</p>
-<p>See the Connected Realm API for information about retrieving a list of connected realm IDs.</p>
-<p>Auction house data updates at a set interval. The value was initially set at 1 hour; however, it might change over time without notice.</p>
-<p>Depending on the number of active auctions on the specified connected realm, the response from this endpoint may be rather large, sometimes exceeding 10 MB.</p>
-<blockquote>
-<div><dl class="field-list simple">
-<dt class="field-odd">param connected_realm_id</dt>
-<dd class="field-odd"><p>The ID of the connected realm.</p>
+<dd><p>Returns all active auctions for a connected realm.  See the
+Connected Realm API for information about retrieving
+a list of connected realm IDs.  Auction house data
+updates at a set interval. The value was initially
+set at 1 hour; however, it might change over time
+without notice.  Depending on the number of active
+auctions on the specified connected realm, the
+response from this endpoint may be rather large,
+sometimes exceeding 10 MB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>connected_realm_id</strong> (<em>int</em>) – The ID of the connected realm.</p>
 </dd>
-<dt class="field-even">type connected_realm_id</dt>
-<dd class="field-even"><p>int</p>
-</dd>
-<dt class="field-odd">return</dt>
-<dd class="field-odd"><p>Returns all active auctions for a connected realm.</p>
-</dd>
-<dt class="field-even">rtype</dt>
-<dd class="field-even"><p>dict</p>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns all active auctions for a connected realm.</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -194,9 +176,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an azerite essence by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -212,25 +191,21 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for an azerite essence by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_azerite_essence_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_azerite_essence_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_azerite_essence_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of azerite essences. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of azerite essences. The fields below are
+provided for example. For more detail see the Search
+Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of azerite essences. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of azerite essences</p>
 </dd>
 </dl>
 </dd></dl>
@@ -243,28 +218,25 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of azerite essences.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_commodity_auctions">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_commodity_auctions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_commodity_auctions" title="Permalink to this definition"></a></dt>
-<dd><p>Returns all active commodity auctions for a region.</p>
-<p>Auction house data updates at a set interval. The value was initially set at 1 hour; however, it might change over time without notice.</p>
-<p>Depending on the number of active auctions on the region, the response from this endpoint may be rather large, sometimes exceeding 10 MB.</p>
-<blockquote>
-<div><dl class="field-list simple">
-<dt class="field-odd">return</dt>
+<dd><p>Returns all active commodity auctions for a region.
+Auction house data updates at a set interval. The value was initially
+set at 1 hour; however, it might change over time without notice.
+Depending on the number of active auctions on the region, the response
+from this endpoint may be rather large, sometimes exceeding 10 MB.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns all active commodity auctions for a region.</p>
 </dd>
-<dt class="field-even">rtype</dt>
+<dt class="field-even">Return type</dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -278,9 +250,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a conduit by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -291,9 +260,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of conduits.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -309,9 +275,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a connected realm by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -323,25 +286,21 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of connected realms.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_connected_realms_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_connected_realms_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_connected_realms_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of connected realms. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of connected realms. The fields below are
+provided for example. For more detail see the Search
+Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of connected realms. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of connected realms</p>
 </dd>
 </dl>
 </dd></dl>
@@ -357,9 +316,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a covenant by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -370,9 +326,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of covenants.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -388,9 +341,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a covenant by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -404,9 +354,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -422,9 +369,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a creature display by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -435,9 +379,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of creature families.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -453,9 +394,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature family by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -470,25 +408,21 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a creature family by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_creature_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_creature_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_creature_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of creatures. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of creatures. The fields below are
+provided for example. For more detail see the Search
+Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of creatures. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of creatures</p>
 </dd>
 </dl>
 </dd></dl>
@@ -504,9 +438,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature type by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -517,9 +448,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of creature types.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -532,7 +460,8 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>namespace</strong> (<em>str</em>) – The namespace of the resource we’re trying to access</p></li>
-<li><p><strong>endpoint</strong> (<em>str</em>) – The API endpoint of the resource we’re trying to access</p></li>
+<li><p><strong>endpoint</strong> (<em>str</em>) – The API endpoint of the resource we’re trying to
+access</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Parameters to send with the request, defaults to None</p></li>
 </ul>
 </dd>
@@ -556,9 +485,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a guild crest border by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -569,9 +495,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of guild crest media.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -587,9 +510,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a guild crest emblem by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -603,9 +523,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -621,9 +538,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item class by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -634,9 +548,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of item classes.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -652,25 +563,20 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for an item by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_item_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_item_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_item_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of items. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of items. The fields below are provided
+for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of items. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of items</p>
 </dd>
 </dl>
 </dd></dl>
@@ -686,9 +592,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item set by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -699,9 +602,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of item sets.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -720,9 +620,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item subclass by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -737,25 +634,21 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a journal encounter by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_journal_encounter_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_journal_encounter_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_journal_encounter_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of journal encounters. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of journal encounters. The fields below
+are provided for example. For more detail see the
+Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of journal encounters. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of journal encounters</p>
 </dd>
 </dl>
 </dd></dl>
@@ -767,9 +660,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of journal encounters.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -785,9 +675,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a journal expansion by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -798,9 +685,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of journal expansions.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -816,9 +700,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a journal instance.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -833,9 +714,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a journal instance by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -847,25 +725,21 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of journal instances.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_media_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_media_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_media_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of all types of media documents. The
+fields below are provided for example. For more
+detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of all types of media documents</p>
 </dd>
 </dl>
 </dd></dl>
@@ -881,9 +755,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a Modified Crafting category by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -895,9 +766,6 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the index of Modified Crafting categories.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -908,9 +776,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the parent index for Modified Crafting.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -926,9 +791,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a Modified Crafting reagent slot type by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -939,9 +801,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the index of Modified Crafting reagent slot types.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -957,25 +816,20 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a mount by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_mount_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mount_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_mount_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of mounts. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of mounts. The fields below are provided
+for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of mounts. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of mounts</p>
 </dd>
 </dl>
 </dd></dl>
@@ -987,9 +841,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of mounts.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1005,9 +856,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a mythic keystone affix by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1022,9 +870,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a mythic keystone affix by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1035,9 +880,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of mythic keystone affixes.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1053,9 +895,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a Mythic Keystone dungeon by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1067,22 +906,18 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of Mythic Keystone dungeons.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_mythic_keystone_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mythic_keystone_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_mythic_keystone_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of links to other documents related to Mythic Keystone dungeons.</p>
+<dd><p>Returns an index of links to other documents related to
+Mythic Keystone dungeons.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Returns an index of links to other documents related to Mythic Keystone dungeons.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-odd"><p>Returns an index of links to other documents related to
+Mythic Keystone dungeons.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1102,25 +937,21 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a weekly Mythic Keystone Leaderboard by period.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_mythic_keystone_leaderboards_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_mythic_keystone_leaderboards_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connected_realm_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_mythic_keystone_leaderboards_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of Mythic Keystone Leaderboard dungeon instances for a connected realm.</p>
+<dd><p>Returns an index of Mythic Keystone Leaderboard dungeon
+instances for a connected realm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>connected_realm_id</strong> (<em>int</em>) – The ID of the connected realm.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns an index of Mythic Keystone Leaderboard dungeon instances for a connected realm.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Returns an index of Mythic Keystone Leaderboard dungeon
+instances for a connected realm.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1136,9 +967,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a Mythic Keystone period by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1149,9 +977,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of Mythic Keystone periods.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1167,9 +992,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a Mythic Keystone season by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1180,9 +1002,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of Mythic Keystone seasons.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1201,9 +1020,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns the leaderboard for a given raid and faction.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1218,9 +1034,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a battle pets by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1231,9 +1044,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of pet abilities.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1249,9 +1059,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a pet ability by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1265,9 +1072,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a pet ability by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1283,9 +1087,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a battle pet by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1296,9 +1097,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of battle pets.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1314,9 +1112,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a playable class by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1331,9 +1126,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a playable class by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1344,9 +1136,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of playable classes.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1362,9 +1151,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a playable race by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1375,9 +1161,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of playable races.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1393,9 +1176,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a playable specialization by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1410,9 +1190,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a playable specialization by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1423,9 +1200,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of playable specializations.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1441,9 +1215,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a power type by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1454,9 +1225,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of power types.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1472,9 +1240,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a profession by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1488,9 +1253,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a profession by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1509,9 +1271,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a skill tier for a profession by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1523,16 +1282,14 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of professions.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_pvp_leaderboard">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pvp_leaderboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvp_season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_bracket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_pvp_leaderboard" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the PvP leaderboard of a specific PvP bracket for a PvP season.</p>
+<dd><p>Returns the PvP leaderboard of a specific PvP bracket for a
+PvP season.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -1541,10 +1298,8 @@
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the PvP leaderboard of a specific PvP bracket for a PvP season.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Returns the PvP leaderboard of a specific PvP bracket for a
+PvP season.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1560,9 +1315,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an index of PvP leaderboards for a PvP season.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1576,9 +1328,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an index of PvP rewards for a PvP season.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1594,9 +1343,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP season by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1607,9 +1353,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of PvP seasons.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1625,9 +1368,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP talent by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1642,9 +1382,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns the PvP talent slots for a playable class by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1655,9 +1392,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of PvP talents.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1673,9 +1407,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP tier by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1690,9 +1421,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a PvP tier by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1703,9 +1431,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of PvP tiers.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1721,9 +1446,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a quest by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1738,9 +1460,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a quest area by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1752,22 +1471,18 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of quest areas.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_quest_categories_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_quest_categories_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_quest_categories_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of quest categories (such as quests for a specific class, profession, or storyline).</p>
+<dd><p>Returns an index of quest categories (such as quests for a
+specific class, profession, or storyline).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Returns an index of quest categories (such as quests for a specific class, profession, or storyline).</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-odd"><p>Returns an index of quest categories (such as quests for a
+specific class, profession, or storyline).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1783,9 +1498,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a quest category by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1800,22 +1512,18 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a quest type by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_quest_types_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_quest_types_index</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_quest_types_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of quest types (such as PvP quests, raid quests, or account quests).</p>
+<dd><p>Returns an index of quest types (such as PvP quests, raid
+quests, or account quests).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Returns an index of quest types (such as PvP quests, raid quests, or account quests).</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
+<dd class="field-odd"><p>Returns an index of quest types (such as PvP quests, raid
+quests, or account quests).</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1827,9 +1535,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the parent index for quests.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1845,25 +1550,20 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single realm by slug or ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_realm_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_realm_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of realms. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of realms. The fields below are provided
+for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of realms. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of realms</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1875,9 +1575,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of realms.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1893,9 +1590,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a recipe by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1909,9 +1603,6 @@
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a recipe by ID.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1927,9 +1618,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a region by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1940,9 +1628,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of regions.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1958,9 +1643,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single reputation faction by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -1971,9 +1653,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of reputation factions.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -1989,9 +1668,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single set of reputation tiers by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2002,9 +1678,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of reputation tiers.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2020,9 +1693,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a soulbind by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2033,9 +1703,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of soulbinds.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2051,9 +1718,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a spell by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2068,25 +1732,20 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a spell by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.game_data.GameData.get_spell_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_spell_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.game_data.GameData.get_spell_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of spells. The fields below are provided for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of spells. The fields below are provided
+for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of spells. The fields below are provided for example. For more detail see the Search Guide.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
+<dd class="field-even"><p>Performs a search of spells</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2102,9 +1761,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a talent by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2115,9 +1771,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of talents.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2133,9 +1786,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a tech talent by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2146,9 +1796,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of tech talents.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2164,9 +1811,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a tech talent by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2181,9 +1825,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a tech talent tree by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2194,9 +1835,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of tech talent trees.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2212,9 +1850,6 @@
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a title by ID.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2225,9 +1860,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of titles.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -2240,9 +1872,6 @@
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the WoW Token index.</p>
 </dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
 </dl>
 </dd></dl>
 
@@ -2253,9 +1882,6 @@
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the WoW Token index.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
