@@ -9,8 +9,11 @@ from .regions import APIRegion
 
 
 class API:
-    def __init__(self, client_id: str, client_secret: str,
-                 client_region: Union[APIRegion, str], *,
+    def __init__(self,
+                 client_id: str,
+                 client_secret: str,
+                 client_region: Union[APIRegion, str],
+                 *,  # Everything after this is a keyword only argument
                  max_parallel_requests: Optional[int] = None,
                  max_request_retries: Optional[int] = None,
                  request_retry_delay: Optional[int] = None,
@@ -40,14 +43,17 @@ class API:
         :type request_debugging: bool, optional
         """
 
+        # Required Params
         self.__client_id: str = client_id
         self.__client_secret: str = client_secret
         self.__client_region: APIRegion = self.set_region(client_region)
         self.__client_locale: str = \
             self.__client_region.value['supported_locales'][0]
 
+        # Access Tokens
         self.__access_tokens: Dict[str, Dict[str, Any]] = {}
 
+        # Optional Params
         self.__semaphore: asyncio.Semaphore = asyncio.Semaphore(
             max_parallel_requests if max_parallel_requests is not None else 50
         )
@@ -63,6 +69,7 @@ class API:
         self.__request_debugging: bool = request_debugging if \
             (request_debugging is not None) else True
 
+        # HTTP Client Stuff
         self.__session: Optional[aiohttp.ClientSession] = None
 
         self.__is_context_manager: bool = False
@@ -178,6 +185,8 @@ class API:
         :rtype: str
         """
 
+        # If we have an access token and it's not expired, return it
+        # Otherwise, generate a new one
         if self.__client_region.name in self.__access_tokens and \
                 self.__access_tokens[self.__client_region.name][
                     'Expires'] > datetime.now():
@@ -189,20 +198,25 @@ class API:
 
             params = {'grant_type': 'client_credentials'}
 
+            # Make the POST request to the OAuth API
             data = await self.get_resource(hostname, endpoint, params,
                                            auth=aiohttp.BasicAuth(
                                                self.__client_id,
                                                self.__client_secret),
                                            method="POST")
 
+            # If we got None as a response, raise an exception
             if data is None:
                 raise AccessTokenException(
                     'Failed to retrieve an access token, verify your '
                     'credentials & internet connectivity.')
 
+            # Calculate the new token expiry time, to be safe we'll subtract
+            # 1 minute from the expiry time returned by the API
             expires = datetime.now() + timedelta(
                 seconds=data['expires_in'] - 60)
 
+            # Store the new token in our dictionary
             self.__access_tokens[self.__client_region.name] = {
                 'Token': data['access_token'], 'Expires': expires}
 
@@ -210,14 +224,16 @@ class API:
 
     @staticmethod
     async def multi_request(requests: list) -> Optional[Union[tuple, list]]:
-        """Make several API requests in parallel
+        """Make several API requests asynchronously
 
         :param requests: A list of API request coroutines
         :type requests: list
         :return: The API responses as a list of dicts
         :rtype: list
         """
+        # This just makes the requests asynchronously and returns the results
         data = await asyncio.gather(*requests)
+
         if data:
             return data
         else:
@@ -227,7 +243,7 @@ class API:
                            hostname: str, api_endpoint: str,
                            params: Optional[dict] = None,
                            auth: Optional[aiohttp.BasicAuth] = None,
-                           method: Optional[str] = None,
+                           method: Optional[str] = "GET",
                            ) -> Optional[dict]:
         """Make an API request and return the response as a JSON dictionary
 
@@ -253,23 +269,35 @@ class API:
         :rtype: dict, none
         """
 
-        if method is None:
-            method = "GET"
-
+        # Use a semaphore to limit the number of concurrent requests
         async with self.__semaphore:
+
+            # This is for counting the num of retries to a failed request
             current_attempt: int = 1
+
+            # If the user isn't using a context manager, we'll need to create
+            # an aiohttp session for them
             local_session: Optional[
                 aiohttp.ClientSession] = aiohttp.ClientSession() if \
                 self.__is_context_manager is False else None
 
+            # This specifically catches if the user is using a context manager
+            # and the session has been closed (async with has been used on
+            # an already existing object)
             if self.__is_context_manager is True and (
                     self.__session is None or self.__session.closed):
                 self.__session = aiohttp.ClientSession()
+
+            # Our result variable, we'll use this to store the response from
+            # the API
             result: Optional[Dict] = None
+
+            # This while loop handles the retry logic for failed requests
             while (current_attempt <= self.__max_request_retries) and \
                     (result is None):
                 try:
-
+                    # Since parts of the API require a different HTTP method
+                    # we'll handle that here with the optional method kwarg
                     supported_methods = {
                         "GET": local_session.get if
                         (self.__is_context_manager is False and
@@ -281,34 +309,49 @@ class API:
                         else self.__session.post,
                     }
 
+                    # If the user has selected an invalid HTTP method, we'll
+                    # raise an exception
                     if method.upper() not in supported_methods:
                         raise RequestMethodException(
                             'Invalid HTTP request method {}, supported '
                             'methods are {}'.format(
                                 method, list(supported_methods.keys())))
 
+                    # Make the request
                     async with supported_methods[method](
                             hostname.format(api_endpoint=api_endpoint),
                             params=params,
                             auth=auth
                     ) as response:
 
+                        # If the response is successful, we'll return the
+                        # response as a JSON dictionary
                         if response.status == 200:
                             result = await response.json()
 
                         response.raise_for_status()
 
+                    # If the user is not using a context manager, we'll close
+                    # the session
                     if (local_session is not None) and \
                             (local_session.closed is False):
                         await local_session.close()
 
                 except aiohttp.ClientError:
+                    # If we encounter an aiohttp exception, we'll increment
+                    # the current attempt and try again
                     if current_attempt == self.__max_request_retries:
+                        # If the user enabled debugging we'll raise the
+                        # exception after the nth attempt, and otherwise
+                        # we'll just return None
                         if self.__request_debugging:
                             raise
                         return result
+
                     current_attempt += 1
+
                     await asyncio.sleep(self.__request_retry_delay)
+
             return result
 
 
