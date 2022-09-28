@@ -13,7 +13,7 @@ class API:
                  client_id: str,
                  client_secret: str,
                  client_region: Union[APIRegion, str],
-                 *,  # Everything after this is a keyword only argument
+                 *,
                  max_parallel_requests: Optional[int] = None,
                  max_request_retries: Optional[int] = None,
                  request_retry_delay: Optional[int] = None,
@@ -75,21 +75,32 @@ class API:
         self.__is_context_manager: bool = False
 
     def __enter__(self) -> None:
+        # We don't want to use this, so we'll just raise an error
         raise TypeError("Use 'async with' instead")
 
     def __exit__(self, exc_type: Optional[Type[BaseException]],
                  exc_val: Optional[BaseException],
                  exc_tb: Optional[TracebackType]) -> None:
+        # This shouldn't ever be called, but just in case
         pass
 
     async def __aenter__(self) -> 'API':
-        self.__session = aiohttp.ClientSession()
+        # Flag for if we're using a context manager
         self.__is_context_manager = True
+
+        # Create the aiohttp session
+        if self.__session is None or self.__session.closed is True:
+            self.__session = aiohttp.ClientSession()
+
         return self
 
     async def __aexit__(self, exc_type: Optional[Type[BaseException]],
                         exc_val: Optional[BaseException],
                         exc_tb: Optional[TracebackType]) -> None:
+        # Flag for if we're using a context manager
+        self.__is_context_manager = False
+
+        # Close the aiohttp session
         if self.__session is not None and self.__session.closed is False:
             await self.__session.close()
 
@@ -119,6 +130,9 @@ class API:
         :return: The API object
         :rtype: API
         """
+
+        # If we're passed a string, try to convert it to an APIRegion
+        # If we're passed an APIRegion, just use it
         if region in list(APIRegion) and isinstance(region, APIRegion):
             self.__client_region = region
             self.__client_locale = region.value['supported_locales'][0]
@@ -147,17 +161,17 @@ class API:
         :return: The current locale being used for API requests
         :rtype: str
         """
-        if locale and \
-                (locale in self.__client_region.value['supported_locales']):
+
+        if locale in self.__client_region.value['supported_locales']:
             self.__client_locale = locale
+
+            return self.__client_locale
         else:
             raise InvalidLocaleException(
                 'Invalid Regional Locale {}, supported locales for {} are {}'
                 .format(
                     locale, self.__client_region.name,
                     self.__client_region.value['supported_locales']))
-
-        return self.__client_locale
 
     def get_hostname(self) -> str:
         """Returns the current region's hostname for Game API requests
@@ -277,15 +291,8 @@ class API:
 
             # If the user isn't using a context manager, we'll need to create
             # an aiohttp session for them
-            local_session: Optional[
-                aiohttp.ClientSession] = aiohttp.ClientSession() if \
-                self.__is_context_manager is False else None
-
-            # This specifically catches if the user is using a context manager
-            # and the session has been closed (async with has been used on
-            # an already existing object)
-            if self.__is_context_manager is True and (
-                    self.__session is None or self.__session.closed):
+            if (self.__session is None or self.__session.closed is True) and \
+                    self.__is_context_manager is False:
                 self.__session = aiohttp.ClientSession()
 
             # Our result variable, we'll use this to store the response from
@@ -299,14 +306,8 @@ class API:
                     # Since parts of the API require a different HTTP method
                     # we'll handle that here with the optional method kwarg
                     supported_methods = {
-                        "GET": local_session.get if
-                        (self.__is_context_manager is False and
-                         local_session is not None)
-                        else self.__session.get,
-                        "POST": local_session.post if
-                        (self.__is_context_manager is False and
-                         local_session is not None)
-                        else self.__session.post,
+                        "GET": self.__session.get,
+                        "POST": self.__session.post,
                     }
 
                     # If the user has selected an invalid HTTP method, we'll
@@ -333,9 +334,10 @@ class API:
 
                     # If the user is not using a context manager, we'll close
                     # the session
-                    if (local_session is not None) and \
-                            (local_session.closed is False):
-                        await local_session.close()
+                    if (self.__session is not None and
+                            self.__is_context_manager is False and
+                            self.__session.closed is False):
+                        await self.__session.close()
 
                 except aiohttp.ClientError:
                     # If we encounter an aiohttp exception, we'll increment

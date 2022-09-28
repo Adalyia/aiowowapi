@@ -32,12 +32,17 @@ class WowApi(API):
         :return: {'name': name, 'realm': realm_slug, 'region': region}
         :rtype: dict
         """
+
+        # Replaces escaped characters with their unescaped counterparts
         string = unquote(str(url))
 
+        # Regex to match the character name, realm slug, and region
         found = re.search(
             r"/(us|eu|kr|tw|cn)/([0-9\-\w]*)/([a-zA-Z\w]*)", string, re.U
         )
 
+        # If the regex found a match, return the character's name, realm, and
+        # region
         if found and found.group() and len(found.groups()) == 3:
             name = found.group(3).lower()
             realm_slug = found.group(2).lower()
@@ -56,16 +61,19 @@ class WowApi(API):
         :return: A matching realm's slug
         :rtype: str
         """
+
         if self.__realms:
+            # If the realms index has already been queried, use the cached
+            # results to find a matching realm
             for realm in self.__realms:
                 realm_name = str(realm_name).lower()
-                if realm_name in str(
-                        realm['name']).lower() or realm_name in str(
-                        realm['fixed']).lower() or realm_name in str(
-                        realm['slug']).lower() or realm_name == str(
-                        realm['id']).lower():
+                if (realm_name in str(realm['name']).lower() or
+                        realm_name in str(realm['fixed']).lower() or
+                        realm_name in str(realm['slug']).lower() or
+                        realm_name == str(realm['id']).lower()):
                     return realm['slug']
         else:
+            # If the realms index has not been cached, get it and try again
             data = await self.Retail.GameData.get_realms_index()
 
             if data:
@@ -91,6 +99,7 @@ class WowApi(API):
         :rtype: str
         """
 
+        # Convert the money value to gold, silver, and copper
         gold = int(money / 10000)
         silver = int((money % 10000) / 100)
         copper = int((money % 10000) % 100)
