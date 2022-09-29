@@ -11,3 +11,5 @@ aiowowapi.egg-info/**
 **/.pytest_cache/**
 .pytest_cache
 .mypy_cache
+.idea
+.idea/**
