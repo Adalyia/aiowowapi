@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.classic.game_data_classic module &mdash; aiowowapi 2.1.1 documentation</title>
+  <title>aiowowapi.classic.game_data_classic module &mdash; aiowowapi 2.1.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -30,7 +31,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.1
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -46,7 +47,57 @@
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.wowapi.html">aiowowapi.wowapi module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.profile.html">aiowowapi.retail.profile module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.game_data.html">aiowowapi.retail.game_data module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.classic.game_data_classic module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.classic.game_data_classic module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData"><code class="docutils literal notranslate"><span class="pre">GameData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_auction_house_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_auction_house_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_auctions"><code class="docutils literal notranslate"><span class="pre">GameData.get_auctions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_connected_realm"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_connected_realms_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realms_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_connected_realms_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realms_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_display_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_display_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_families_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_families_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_family"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_family()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_family_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_family_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_type"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_types_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_types_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_game_api_resource"><code class="docutils literal notranslate"><span class="pre">GameData.get_game_api_resource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_border_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_border_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_components_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_components_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_emblem_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_emblem_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item"><code class="docutils literal notranslate"><span class="pre">GameData.get_item()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item_class"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_class()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item_classes_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_classes_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_item_subclass"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_subclass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_media_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_media_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_playable_class"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_class()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_playable_class_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_class_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_playable_classes_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_classes_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_playable_race"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_race()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_playable_races_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_races_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_power_type"><code class="docutils literal notranslate"><span class="pre">GameData.get_power_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_power_types_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_power_types_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboard"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_leaderboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboards_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_leaderboards_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_region_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_region_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_regional_season"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_regional_season()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_regional_season_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_regional_season_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_rewards_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_rewards_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_season"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_season()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_seasons_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_seasons_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_realm"><code class="docutils literal notranslate"><span class="pre">GameData.get_realm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_realm_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_realm_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_realms_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_realms_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_region"><code class="docutils literal notranslate"><span class="pre">GameData.get_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_regions_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_regions_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.classic.game_data_classic.GameData.get_wow_token_index_cn"><code class="docutils literal notranslate"><span class="pre">GameData.get_wow_token_index_cn()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -62,8 +113,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aiowowapi.classic.game_data_classic module</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">aiowowapi.classic.game_data_classic module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.classic.game_data_classic.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -79,47 +130,65 @@
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.classic.game_data_classic.</span></span><span class="sig-name descname"><span class="pre">GameData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class contains all API endpoints for the GameData category of the
+Classic World of Warcraft API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>api</strong> (<a class="reference internal" href="aiowowapi.api.html#aiowowapi.api.API" title="aiowowapi.api.API"><em>API</em></a>) – An instance of our generic API object</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_auction_house_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_auction_house_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connected_realm_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_auction_house_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of auction houses for a connected realm.
-See the Connected Realm API for information about
-retrieving a list of connected realm IDs.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>connected_realm_id</strong> (<em>int</em>) – The ID of the connected realm.</p>
+<dd><p>Returns an index of auction houses for a connected realm.</p>
+<p>See the Connected Realm API for information about retrieving a list of connected realm IDs.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param connected_realm_id</dt>
+<dd class="field-odd"><p>The ID of the connected realm.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns an index of auction houses for a connected realm.</p>
+<dt class="field-even">type connected_realm_id</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Returns an index of auction houses for a connected realm.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_auctions">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_auctions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">connected_realm_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auction_house_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_auctions" title="Permalink to this definition"></a></dt>
-<dd><p>Returns all active auctions for a specific auction house on
-a connected realm.  See the Connected Realm API for
-information about retrieving a list of connected
-realm IDs.  Auction house data updates at a set
-interval. The value was initially set at 1 hour;
-however, it might change over time without notice.
-Depending on the number of active auctions on the
-specified connected realm, the response from this
-endpoint may be rather large, sometimes exceeding 10
-MB.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>connected_realm_id</strong> (<em>int</em>) – The ID of the connected realm.</p></li>
-<li><p><strong>auction_house_id</strong> (<em>int</em>) – The ID of the auction house.</p></li>
-</ul>
+<dd><p>Returns all active auctions for a specific auction house on a connected realm.</p>
+<p>See the Connected Realm API for information about retrieving a list of connected realm IDs.</p>
+<p>Auction house data updates at a set interval. The value was initially set at 1 hour; however, it might change over time without notice.</p>
+<p>Depending on the number of active auctions on the specified connected realm, the response from this endpoint may be rather large, sometimes exceeding 10 MB.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param connected_realm_id</dt>
+<dd class="field-odd"><p>The ID of the connected realm.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns all active auctions for a specific auction house on
-a connected realm.</p>
+<dt class="field-even">type connected_realm_id</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">param auction_house_id</dt>
+<dd class="field-odd"><p>The ID of the auction house.</p>
+</dd>
+<dt class="field-even">type auction_house_id</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Returns all active auctions for a specific auction house on a connected realm.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -133,6 +202,9 @@ a connected realm.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a connected realm by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -144,21 +216,25 @@ a connected realm.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of connected realms.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_connected_realms_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_connected_realms_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_connected_realms_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of connected realms. The fields below are
-provided for example. For more detail see the Search
-Guide.</p>
+<dd><p>Performs a search of connected realms. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of connected realms</p>
+<dd class="field-even"><p>Performs a search of connected realms. The fields below are provided for example. For more detail see the Search Guide.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -174,6 +250,9 @@ Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -188,6 +267,9 @@ Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a creature display by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -198,6 +280,9 @@ Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of creature families.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -213,6 +298,9 @@ Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature family by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -227,21 +315,25 @@ Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a creature family by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_creature_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_creature_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_creature_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of creatures. The fields below are
-provided for example. For more detail see the Search
-Guide.</p>
+<dd><p>Performs a search of creatures. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of creatures</p>
+<dd class="field-even"><p>Performs a search of creatures. The fields below are provided for example. For more detail see the Search Guide.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -257,6 +349,9 @@ Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a creature type by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -268,20 +363,21 @@ Guide.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of creature types.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_game_api_resource">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_game_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_game_api_resource" title="Permalink to this definition"></a></dt>
-<dd><p>Generic method for retrieving data from a Classic Game Data
-API endpoint</p>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_game_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_game_api_resource" title="Permalink to this definition"></a></dt>
+<dd><p>Generic method for retrieving data from a Game Data API endpoint</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>namespace</strong> (<em>str</em>) – The namespace of the resource we’re trying to access</p></li>
-<li><p><strong>endpoint</strong> (<em>str</em>) – The API endpoint of the resource we’re trying to
-access</p></li>
+<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint of the resource we’re trying to access</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Parameters to send with the request, defaults to None</p></li>
 </ul>
 </dd>
@@ -305,6 +401,9 @@ access</p></li>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a guild crest border by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -315,6 +414,9 @@ access</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of guild crest media.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -330,6 +432,9 @@ access</p></li>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a guild crest emblem by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -343,6 +448,9 @@ access</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item by ID.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -358,6 +466,9 @@ access</p></li>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item class by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -368,6 +479,9 @@ access</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of item classes.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -383,20 +497,25 @@ access</p></li>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for an item by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_item_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_item_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_item_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of items. The fields below are provided
-for example. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of items. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of items</p>
+<dd class="field-even"><p>Performs a search of items. The fields below are provided for example. For more detail see the Search Guide.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -415,21 +534,25 @@ for example. For more detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an item subclass by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_media_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_media_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_media_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of all types of media documents. The
-fields below are provided for example. For more
-detail see the Search Guide.</p>
+<dd><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of all types of media documents</p>
+<dd class="field-even"><p>Performs a search of all types of media documents. The fields below are provided for example. For more detail see the Search Guide.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -445,6 +568,9 @@ detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a playable class by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -459,6 +585,9 @@ detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns media for a playable class by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -469,6 +598,9 @@ detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of playable classes.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -484,6 +616,9 @@ detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a playable race by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -494,6 +629,9 @@ detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of playable races.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -509,6 +647,9 @@ detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a power type by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -520,14 +661,16 @@ detail see the Search Guide.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of power types.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboard">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pvp_leaderboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvp_region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_bracket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboard" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the PvP leaderboard of a specific PvP bracket for a
-PvP season in a given PvP region.</p>
+<dd><p>Returns the PvP leaderboard of a specific PvP bracket for a PvP season in a given PvP region.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -537,8 +680,10 @@ PvP season in a given PvP region.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the PvP leaderboard of a specific PvP bracket for a
-PvP season in a given PvP region.</p>
+<dd class="field-even"><p>Returns the PvP leaderboard of a specific PvP bracket for a PvP season in a given PvP region.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -546,8 +691,7 @@ PvP season in a given PvP region.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboards_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pvp_leaderboards_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvp_region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboards_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of PvP leaderboards for a PvP season in a
-given PvP region.</p>
+<dd><p>Returns an index of PvP leaderboards for a PvP season in a given PvP region.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -556,8 +700,10 @@ given PvP region.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns an index of PvP leaderboards for a PvP season in a
-given PvP region.</p>
+<dd class="field-even"><p>Returns an index of PvP leaderboards for a PvP season in a given PvP region.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -569,6 +715,9 @@ given PvP region.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of PvP Regions.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -587,6 +736,9 @@ given PvP region.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP season by region ID and season ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -601,14 +753,16 @@ given PvP region.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an index of PvP Seasons in a PvP region.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_pvp_rewards_index">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_pvp_rewards_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pvp_region_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_pvp_rewards_index" title="Permalink to this definition"></a></dt>
-<dd><p>Returns an index of PvP rewards for a PvP season in a given
-PvP region.</p>
+<dd><p>Returns an index of PvP rewards for a PvP season in a given PvP region.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -617,8 +771,10 @@ PvP region.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns an index of PvP rewards for a PvP season in a given
-PvP region.</p>
+<dd class="field-even"><p>Returns an index of PvP rewards for a PvP season in a given PvP region.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -634,6 +790,9 @@ PvP region.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP season by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -644,6 +803,9 @@ PvP region.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of PvP seasons.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -659,20 +821,25 @@ PvP region.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single realm by slug or ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.classic.game_data_classic.GameData.get_realm_search">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_realm_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">search_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.classic.game_data_classic.GameData.get_realm_search" title="Permalink to this definition"></a></dt>
-<dd><p>Performs a search of realms. The fields below are examples
-only. For more detail see the Search Guide.</p>
+<dd><p>Performs a search of realms. The fields below are examples only. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>search_params</strong> (<em>dict</em>) – Search parameters</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Performs a search of realms</p>
+<dd class="field-even"><p>Performs a search of realms. The fields below are examples only. For more detail see the Search Guide.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -684,6 +851,9 @@ only. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of realms.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -699,6 +869,9 @@ only. For more detail see the Search Guide.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a region by ID.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -710,6 +883,9 @@ only. For more detail see the Search Guide.</p>
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns an index of regions.</p>
 </dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -720,6 +896,9 @@ only. For more detail see the Search Guide.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Returns the WoW Token index.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>

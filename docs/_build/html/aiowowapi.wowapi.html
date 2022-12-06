@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.1.1 documentation</title>
+  <title>aiowowapi.wowapi module &mdash; aiowowapi 2.1.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.1
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +45,15 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.api.html">aiowowapi.api module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.wowapi module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.wowapi module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.wowapi.WowApi"><code class="docutils literal notranslate"><span class="pre">WowApi</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.wowapi.WowApi.format_wow_gold"><code class="docutils literal notranslate"><span class="pre">WowApi.format_wow_gold()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.wowapi.WowApi.get_realm_slug"><code class="docutils literal notranslate"><span class="pre">WowApi.get_realm_slug()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.wowapi.WowApi.parse_armory_link"><code class="docutils literal notranslate"><span class="pre">WowApi.parse_armory_link()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.profile.html">aiowowapi.retail.profile module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.game_data.html">aiowowapi.retail.game_data module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html">aiowowapi.classic.game_data_classic module</a></li>
@@ -63,8 +72,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aiowowapi.wowapi module</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">aiowowapi.wowapi module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.wowapi.rst.txt" rel="nofollow"> View page source</a>
       </li>

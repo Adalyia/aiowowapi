@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.classic package &mdash; aiowowapi 2.1.1 documentation</title>
+  <title>aiowowapi.classic package &mdash; aiowowapi 2.1.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" /> 
@@ -29,7 +30,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.1
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -61,8 +62,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aiowowapi.classic package</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">aiowowapi.classic package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.classic.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -78,8 +79,61 @@
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.classic.html">aiowowapi.classic.classic module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html">aiowowapi.classic.game_data_classic module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.classic.html">aiowowapi.classic.classic module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiowowapi.classic.classic.html#aiowowapi.classic.classic.ClassicApi"><code class="docutils literal notranslate"><span class="pre">ClassicApi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html">aiowowapi.classic.game_data_classic module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData"><code class="docutils literal notranslate"><span class="pre">GameData</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_auction_house_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_auction_house_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_auctions"><code class="docutils literal notranslate"><span class="pre">GameData.get_auctions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_connected_realm"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_connected_realms_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realms_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_connected_realms_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_connected_realms_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_display_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_display_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_families_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_families_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_family"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_family()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_family_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_family_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_type"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_creature_types_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_creature_types_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_game_api_resource"><code class="docutils literal notranslate"><span class="pre">GameData.get_game_api_resource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_border_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_border_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_components_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_components_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_guild_crest_emblem_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_guild_crest_emblem_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item"><code class="docutils literal notranslate"><span class="pre">GameData.get_item()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item_class"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_class()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item_classes_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_classes_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_item_subclass"><code class="docutils literal notranslate"><span class="pre">GameData.get_item_subclass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_media_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_media_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_playable_class"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_class()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_playable_class_media"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_class_media()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_playable_classes_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_classes_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_playable_race"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_race()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_playable_races_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_playable_races_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_power_type"><code class="docutils literal notranslate"><span class="pre">GameData.get_power_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_power_types_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_power_types_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboard"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_leaderboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_leaderboards_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_leaderboards_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_region_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_region_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_regional_season"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_regional_season()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_regional_season_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_regional_season_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_rewards_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_rewards_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_season"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_season()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_pvp_seasons_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_pvp_seasons_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_realm"><code class="docutils literal notranslate"><span class="pre">GameData.get_realm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_realm_search"><code class="docutils literal notranslate"><span class="pre">GameData.get_realm_search()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_realms_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_realms_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_region"><code class="docutils literal notranslate"><span class="pre">GameData.get_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_regions_index"><code class="docutils literal notranslate"><span class="pre">GameData.get_regions_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html#aiowowapi.classic.game_data_classic.GameData.get_wow_token_index_cn"><code class="docutils literal notranslate"><span class="pre">GameData.get_wow_token_index_cn()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

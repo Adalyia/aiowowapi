@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.retail.profile module &mdash; aiowowapi 2.1.1 documentation</title>
+  <title>aiowowapi.retail.profile module &mdash; aiowowapi 2.1.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.1
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -45,7 +46,43 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.api.html">aiowowapi.api module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.wowapi.html">aiowowapi.wowapi module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.retail.profile module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.retail.profile module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.retail.profile.Profile"><code class="docutils literal notranslate"><span class="pre">Profile</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_achievement_statistics"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_achievement_statistics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_achievements_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_achievements_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_appearance_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_appearance_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_collections_index"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_collections_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_completed_quests"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_completed_quests()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_dungeons"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_dungeons()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_encounters_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_encounters_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_equipment_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_equipment_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_hunter_pets_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_media_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_media_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_mounts_collection_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_mounts_collection_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_profile_index"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_mythic_keystone_profile_index()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_mythic_keystone_season_details()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_pets_collection_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_pets_collection_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_professions_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_professions_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_profile_status"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_profile_status()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_profile_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_profile_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_pvp_bracket_statistics"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_pvp_bracket_statistics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_pvp_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_pvp_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_quests"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_quests()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_raids"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_raids()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_reputations_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_reputations_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_soulbinds"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_soulbinds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_specializations_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_specializations_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_statistics_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_statistics_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_character_titles_summary"><code class="docutils literal notranslate"><span class="pre">Profile.get_character_titles_summary()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_guild"><code class="docutils literal notranslate"><span class="pre">Profile.get_guild()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_guild_achievements"><code class="docutils literal notranslate"><span class="pre">Profile.get_guild_achievements()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_guild_activity"><code class="docutils literal notranslate"><span class="pre">Profile.get_guild_activity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_guild_roster"><code class="docutils literal notranslate"><span class="pre">Profile.get_guild_roster()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.retail.profile.Profile.get_profile_api_resource"><code class="docutils literal notranslate"><span class="pre">Profile.get_profile_api_resource()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.game_data.html">aiowowapi.retail.game_data module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.classic.game_data_classic.html">aiowowapi.classic.game_data_classic module</a></li>
 </ul>
@@ -63,8 +100,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aiowowapi.retail.profile module</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">aiowowapi.retail.profile module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.retail.profile.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -80,11 +117,17 @@
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.retail.profile.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class contains all API endpoints for the Profile category of the
+Retail World of Warcraft API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>api</strong> (<a class="reference internal" href="aiowowapi.api.html#aiowowapi.api.API" title="aiowowapi.api.API"><em>API</em></a>) – An instance of our generic API object</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_achievement_statistics">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievement_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievement_statistics" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a character’s statistics as they pertain to
-achievements.</p>
+<dd><p>Returns a character’s statistics as they pertain to achievements.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -93,8 +136,10 @@ achievements.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a character’s statistics as they pertain to
-achievements.</p>
+<dd class="field-even"><p>Returns a character’s statistics as they pertain to achievements.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -102,8 +147,7 @@ achievements.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_achievements_summary">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievements_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievements_summary" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a summary of the achievements a character has
-completed.</p>
+<dd><p>Returns a summary of the achievements a character has completed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -112,8 +156,10 @@ completed.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a summary of the achievements a character has
-completed.</p>
+<dd class="field-even"><p>Returns a summary of the achievements a character has completed.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -132,6 +178,9 @@ completed.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s appearance settings.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -148,6 +197,9 @@ completed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns an index of collection types for a character.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -166,6 +218,9 @@ completed.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a list of quests that a character has completed.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -182,6 +237,9 @@ completed.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s completed dungeons.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -200,6 +258,9 @@ completed.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s encounters.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -217,15 +278,16 @@ completed.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of the items equipped by a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_hunter_pets_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary" title="Permalink to this definition"></a></dt>
-<dd><p>If the character is a hunter, returns a summary of the
-character’s hunter pets. Otherwise, returns an HTTP
-404 Not Found error.</p>
+<dd><p>If the character is a hunter, returns a summary of the character’s hunter pets. Otherwise, returns an HTTP 404 Not Found error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -234,9 +296,10 @@ character’s hunter pets. Otherwise, returns an HTTP
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>If the character is a hunter, returns a summary of the
-character’s hunter pets. Otherwise, returns an
-HTTP 404 Not Found error.</p>
+<dd class="field-even"><p>If the character is a hunter, returns a summary of the character’s hunter pets. Otherwise, returns an HTTP 404 Not Found error.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -244,8 +307,7 @@ HTTP 404 Not Found error.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_media_summary">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_media_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_media_summary" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a summary of the media assets available for a
-character (such as an avatar render).</p>
+<dd><p>Returns a summary of the media assets available for a character (such as an avatar render).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -254,8 +316,10 @@ character (such as an avatar render).</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a summary of the media assets available for a
-character (such as an avatar render).</p>
+<dd class="field-even"><p>Returns a summary of the media assets available for a character (such as an avatar render).</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -274,6 +338,9 @@ character (such as an avatar render).</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of the mounts a character has obtained.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -291,35 +358,51 @@ character (such as an avatar render).</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns the Mythic Keystone profile index for a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mythic_keystone_season_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the Mythic Keystone season details for a character.
-Returns a 404 Not Found for characters that have not
-yet completed a Mythic Keystone dungeon for the
-specified season.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
-<li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
-<li><p><strong>season_id</strong> (<em>str</em>) – The ID of the Mythic Keystone season.</p></li>
-</ul>
+<dd><p>Returns the Mythic Keystone season details for a character.</p>
+<p>Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param realm_slug</dt>
+<dd class="field-odd"><p>The slug of the realm.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the Mythic Keystone season details for a character.</p>
+<dt class="field-even">type realm_slug</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param character_name</dt>
+<dd class="field-odd"><p>The lowercase name of the character.</p>
+</dd>
+<dt class="field-even">type character_name</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param season_id</dt>
+<dd class="field-odd"><p>The ID of the Mythic Keystone season.</p>
+</dd>
+<dt class="field-even">type season_id</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Returns the Mythic Keystone season details for a character.</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_pets_collection_summary">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pets_collection_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pets_collection_summary" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a summary of the battle pets a character has
-obtained.</p>
+<dd><p>Returns a summary of the battle pets a character has obtained.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -328,8 +411,10 @@ obtained.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a summary of the battle pets a character has
-obtained.</p>
+<dd class="field-even"><p>Returns a summary of the battle pets a character has obtained.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -348,44 +433,46 @@ obtained.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of professions for a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_profile_status">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_profile_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_profile_status" title="Permalink to this definition"></a></dt>
-<dd><p>Returns the status and a unique ID for a character. A client
-should delete information about a character from
-their application if any of the following conditions
-occur: an HTTP 404 Not Found error is returned the
-is_valid value is false the returned character ID
-doesn’t match the previously recorded value for the
-character The following example illustrates how to
-use this endpoint: A client requests and stores
-information about a character, including its unique
-character ID and the timestamp of the request. After
-30 days, the client makes a request to the status
-endpoint to verify if the character information is
-still valid. If character cannot be found, is not
-valid, or the characters IDs do not match, the
-client removes the information from their
-application. If the character is valid and the
-character IDs match, the client retains the data for
-another 30 days.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
-<li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
-</ul>
+<dd><p>Returns the status and a unique ID for a character. A client should delete information about a character from their application if any of the following conditions occur:
+an HTTP 404 Not Found error is returned
+the is_valid value is false
+the returned character ID doesn’t match the previously recorded value for the character
+The following example illustrates how to use this endpoint:
+A client requests and stores information about a character, including its unique character ID and the timestamp of the request.
+After 30 days, the client makes a request to the status endpoint to verify if the character information is still valid.
+If character cannot be found, is not valid, or the characters IDs do not match, the client removes the information from their application.
+If the character is valid and the character IDs match, the client retains the data for another 30 days.</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">param realm_slug</dt>
+<dd class="field-odd"><p>The slug of the realm.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns the status and a unique ID for a character. A client
-should delete information about a character from
-their application if any of the following
-conditions occur:</p>
+<dt class="field-even">type realm_slug</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">param character_name</dt>
+<dd class="field-odd"><p>The lowercase name of the character.</p>
+</dd>
+<dt class="field-even">type character_name</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+<dt class="field-odd">return</dt>
+<dd class="field-odd"><p>Returns the status and a unique ID for a character. A client should delete information about a character from their application if any of the following conditions occur:</p>
+</dd>
+<dt class="field-even">rtype</dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -401,6 +488,9 @@ conditions occur:</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a profile summary for a character.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -420,6 +510,9 @@ conditions occur:</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns the PvP bracket statistics for a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -437,14 +530,16 @@ conditions occur:</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a PvP summary for a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_quests">
 <em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_quests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_quests" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a character’s active quests as well as a link to the
-character’s completed quests.</p>
+<dd><p>Returns a character’s active quests as well as a link to the character’s completed quests.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -453,8 +548,10 @@ character’s completed quests.</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Returns a character’s active quests as well as a link to the
-character’s completed quests.</p>
+<dd class="field-even"><p>Returns a character’s active quests as well as a link to the character’s completed quests.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -473,6 +570,9 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s completed raids.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -489,6 +589,9 @@ character’s completed quests.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s reputations.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -507,6 +610,9 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a character’s soulbinds.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -523,6 +629,9 @@ character’s completed quests.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of a character’s specializations.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -541,6 +650,9 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a statistics summary for a character.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -557,6 +669,9 @@ character’s completed quests.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a summary of titles a character has obtained.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -575,6 +690,9 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single guild by its name and realm.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -591,6 +709,9 @@ character’s completed quests.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single guild’s achievements by name and realm.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>
@@ -609,6 +730,9 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single guild’s activity by name and realm.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
@@ -626,19 +750,21 @@ character’s completed quests.</p>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Returns a single guild’s roster by its name and realm.</p>
 </dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_profile_api_resource">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_profile_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_profile_api_resource" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_profile_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_profile_api_resource" title="Permalink to this definition"></a></dt>
 <dd><p>Generic method for retrieving data from a Profile API endpoint</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>namespace</strong> (<em>str</em>) – The namespace of the resource we’re trying to access</p></li>
-<li><p><strong>endpoint</strong> (<em>str</em>) – The API endpoint of the resource we’re trying to
-access</p></li>
+<li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint of the resource we’re trying to access</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Parameters to send with the request, defaults to None</p></li>
 </ul>
 </dd>

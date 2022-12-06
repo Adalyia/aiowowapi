@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.api module &mdash; aiowowapi 2.1.1 documentation</title>
+  <title>aiowowapi.api module &mdash; aiowowapi 2.1.3 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -16,6 +16,7 @@
         <script src="_static/underscore.js"></script>
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -31,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> aiowowapi
           </a>
               <div class="version">
-                2.1.1
+                2.1.3
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -43,7 +44,27 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.api module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">aiowowapi.api module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.API"><code class="docutils literal notranslate"><span class="pre">API</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_access_token"><code class="docutils literal notranslate"><span class="pre">API.get_access_token()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_hostname"><code class="docutils literal notranslate"><span class="pre">API.get_hostname()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_locale"><code class="docutils literal notranslate"><span class="pre">API.get_locale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_oauth_hostname"><code class="docutils literal notranslate"><span class="pre">API.get_oauth_hostname()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_region"><code class="docutils literal notranslate"><span class="pre">API.get_region()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.get_resource"><code class="docutils literal notranslate"><span class="pre">API.get_resource()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.multi_request"><code class="docutils literal notranslate"><span class="pre">API.multi_request()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.set_locale"><code class="docutils literal notranslate"><span class="pre">API.set_locale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#aiowowapi.api.API.set_region"><code class="docutils literal notranslate"><span class="pre">API.set_region()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.AccessTokenException"><code class="docutils literal notranslate"><span class="pre">AccessTokenException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.ApiException"><code class="docutils literal notranslate"><span class="pre">ApiException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.InvalidLocaleException"><code class="docutils literal notranslate"><span class="pre">InvalidLocaleException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.InvalidRegionException"><code class="docutils literal notranslate"><span class="pre">InvalidRegionException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.RequestException"><code class="docutils literal notranslate"><span class="pre">RequestException</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aiowowapi.api.RequestMethodException"><code class="docutils literal notranslate"><span class="pre">RequestMethodException</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.wowapi.html">aiowowapi.wowapi module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.profile.html">aiowowapi.retail.profile module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="aiowowapi.retail.game_data.html">aiowowapi.retail.game_data module</a></li>
@@ -63,8 +84,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>aiowowapi.api module</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">aiowowapi.api module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.api.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -157,7 +178,7 @@ an aiohttp request.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.get_resource">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BasicAuth</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_resource" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hostname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">BasicAuth</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'GET'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.api.API.get_resource" title="Permalink to this definition"></a></dt>
 <dd><p>Make an API request and return the response as a JSON dictionary</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -193,7 +214,7 @@ an aiohttp request.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.api.API.multi_request">
 <em class="property"><span class="pre">async</span><span class="w"> </span><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">multi_request</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">requests</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.api.API.multi_request" title="Permalink to this definition"></a></dt>
-<dd><p>Make several API requests in parallel</p>
+<dd><p>Make several API requests asynchronously</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>requests</strong> (<em>list</em>) – A list of API request coroutines</p>
