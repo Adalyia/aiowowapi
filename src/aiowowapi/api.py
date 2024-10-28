@@ -318,11 +318,21 @@ class API:
                             'methods are {}'.format(
                                 method, list(supported_methods.keys())))
 
+                    # Work around for recent changes, buying a little bit of
+                    # time so we can update everything.
+                    # https://us.forums.blizzard.com/en/blizzard/t/upcoming-changes-to-battlenet%E2%80%99s-api-gateway/51561
+                    headers = {}
+                    if params and params.get("access_token"):
+                        token = params["access_token"]
+                        headers = {"Authorization": f"Bearer {token}"}
+                        params.pop("access_token")
+
                     # Make the request
                     async with supported_methods[method](
                             hostname.format(api_endpoint=api_endpoint),
                             params=params,
-                            auth=auth
+                            auth=auth,
+                            headers=headers
                     ) as response:
 
                         # If the response is successful, we'll return the
