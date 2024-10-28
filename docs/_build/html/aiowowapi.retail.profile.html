@@ -1,22 +1,21 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>aiowowapi.retail.profile module &mdash; aiowowapi 2.1.3 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>aiowowapi.retail.profile module &mdash; aiowowapi 2.1.5 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=786ba454"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,14 +28,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> aiowowapi
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aiowowapi
           </a>
-              <div class="version">
-                2.1.3
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -100,7 +100,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
       <li class="breadcrumb-item active">aiowowapi.retail.profile module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/aiowowapi.retail.profile.rst.txt" rel="nofollow"> View page source</a>
@@ -112,33 +112,33 @@
            <div itemprop="articleBody">
              
   <section id="module-aiowowapi.retail.profile">
-<span id="aiowowapi-retail-profile-module"></span><h1>aiowowapi.retail.profile module<a class="headerlink" href="#module-aiowowapi.retail.profile" title="Permalink to this heading"></a></h1>
+<span id="aiowowapi-retail-profile-module"></span><h1>aiowowapi.retail.profile module<a class="headerlink" href="#module-aiowowapi.retail.profile" title="Link to this heading"></a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.retail.profile.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aiowowapi.retail.profile.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>This class contains all API endpoints for the Profile category of the
 Retail World of Warcraft API</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>api</strong> (<a class="reference internal" href="aiowowapi.api.html#aiowowapi.api.API" title="aiowowapi.api.API"><em>API</em></a>) – An instance of our generic API object</p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_achievement_statistics">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievement_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievement_statistics" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievement_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievement_statistics" title="Link to this definition"></a></dt>
 <dd><p>Returns a character’s statistics as they pertain to achievements.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a character’s statistics as they pertain to achievements.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -146,19 +146,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_achievements_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievements_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievements_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_achievements_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_achievements_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of the achievements a character has completed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of the achievements a character has completed.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -166,19 +166,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_appearance_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_appearance_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_appearance_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_appearance_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_appearance_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s appearance settings.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s appearance settings.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -186,19 +186,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_collections_index">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_collections_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_collections_index" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_collections_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_collections_index" title="Link to this definition"></a></dt>
 <dd><p>Returns an index of collection types for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns an index of collection types for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -206,19 +206,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_completed_quests">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_completed_quests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_completed_quests" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_completed_quests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_completed_quests" title="Link to this definition"></a></dt>
 <dd><p>Returns a list of quests that a character has completed.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a list of quests that a character has completed.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -226,19 +226,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_dungeons">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_dungeons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_dungeons" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_dungeons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_dungeons" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s completed dungeons.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s completed dungeons.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -246,19 +246,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_encounters_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_encounters_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_encounters_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_encounters_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_encounters_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s encounters.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s encounters.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -266,19 +266,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_equipment_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_equipment_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_equipment_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_equipment_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_equipment_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of the items equipped by a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of the items equipped by a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -286,19 +286,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_hunter_pets_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_hunter_pets_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_hunter_pets_summary" title="Link to this definition"></a></dt>
 <dd><p>If the character is a hunter, returns a summary of the character’s hunter pets. Otherwise, returns an HTTP 404 Not Found error.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>If the character is a hunter, returns a summary of the character’s hunter pets. Otherwise, returns an HTTP 404 Not Found error.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -306,19 +306,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_media_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_media_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_media_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_media_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_media_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of the media assets available for a character (such as an avatar render).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of the media assets available for a character (such as an avatar render).</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -326,19 +326,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_mounts_collection_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mounts_collection_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mounts_collection_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mounts_collection_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mounts_collection_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of the mounts a character has obtained.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of the mounts a character has obtained.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -346,19 +346,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_mythic_keystone_profile_index">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mythic_keystone_profile_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_profile_index" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mythic_keystone_profile_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_profile_index" title="Link to this definition"></a></dt>
 <dd><p>Returns the Mythic Keystone profile index for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns the Mythic Keystone profile index for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -366,33 +366,33 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mythic_keystone_season_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_mythic_keystone_season_details</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">season_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_mythic_keystone_season_details" title="Link to this definition"></a></dt>
 <dd><p>Returns the Mythic Keystone season details for a character.</p>
 <p>Returns a 404 Not Found for characters that have not yet completed a Mythic Keystone dungeon for the specified season.</p>
 <blockquote>
 <div><dl class="field-list simple">
-<dt class="field-odd">param realm_slug</dt>
+<dt class="field-odd">param realm_slug<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The slug of the realm.</p>
 </dd>
-<dt class="field-even">type realm_slug</dt>
+<dt class="field-even">type realm_slug<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
-<dt class="field-odd">param character_name</dt>
+<dt class="field-odd">param character_name<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The lowercase name of the character.</p>
 </dd>
-<dt class="field-even">type character_name</dt>
+<dt class="field-even">type character_name<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
-<dt class="field-odd">param season_id</dt>
+<dt class="field-odd">param season_id<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The ID of the Mythic Keystone season.</p>
 </dd>
-<dt class="field-even">type season_id</dt>
+<dt class="field-even">type season_id<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
-<dt class="field-odd">return</dt>
+<dt class="field-odd">return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Returns the Mythic Keystone season details for a character.</p>
 </dd>
-<dt class="field-even">rtype</dt>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -401,19 +401,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_pets_collection_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pets_collection_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pets_collection_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pets_collection_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pets_collection_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of the battle pets a character has obtained.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of the battle pets a character has obtained.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -421,19 +421,19 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_professions_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_professions_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_professions_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_professions_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_professions_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of professions for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of professions for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -441,7 +441,7 @@ Retail World of Warcraft API</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_profile_status">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_profile_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_profile_status" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_profile_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_profile_status" title="Link to this definition"></a></dt>
 <dd><p>Returns the status and a unique ID for a character. A client should delete information about a character from their application if any of the following conditions occur:
 an HTTP 404 Not Found error is returned
 the is_valid value is false
@@ -453,22 +453,22 @@ If character cannot be found, is not valid, or the characters IDs do not match, 
 If the character is valid and the character IDs match, the client retains the data for another 30 days.</p>
 <blockquote>
 <div><dl class="field-list simple">
-<dt class="field-odd">param realm_slug</dt>
+<dt class="field-odd">param realm_slug<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The slug of the realm.</p>
 </dd>
-<dt class="field-even">type realm_slug</dt>
+<dt class="field-even">type realm_slug<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
-<dt class="field-odd">param character_name</dt>
+<dt class="field-odd">param character_name<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The lowercase name of the character.</p>
 </dd>
-<dt class="field-even">type character_name</dt>
+<dt class="field-even">type character_name<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
 </dd>
-<dt class="field-odd">return</dt>
+<dt class="field-odd">return<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Returns the status and a unique ID for a character. A client should delete information about a character from their application if any of the following conditions occur:</p>
 </dd>
-<dt class="field-even">rtype</dt>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
 <dd class="field-even"><p>dict</p>
 </dd>
 </dl>
@@ -477,19 +477,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_profile_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_profile_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_profile_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_profile_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_profile_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a profile summary for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a profile summary for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -497,20 +497,20 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_pvp_bracket_statistics">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pvp_bracket_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_bracket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pvp_bracket_statistics" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pvp_bracket_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pvp_bracket</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pvp_bracket_statistics" title="Link to this definition"></a></dt>
 <dd><p>Returns the PvP bracket statistics for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 <li><p><strong>pvp_bracket</strong> (<em>str</em>) – The PvP bracket type.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns the PvP bracket statistics for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -518,19 +518,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_pvp_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pvp_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pvp_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_pvp_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_pvp_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a PvP summary for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a PvP summary for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -538,19 +538,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_quests">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_quests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_quests" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_quests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_quests" title="Link to this definition"></a></dt>
 <dd><p>Returns a character’s active quests as well as a link to the character’s completed quests.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a character’s active quests as well as a link to the character’s completed quests.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -558,19 +558,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_raids">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_raids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_raids" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_raids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_raids" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s completed raids.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s completed raids.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -578,19 +578,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_reputations_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_reputations_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_reputations_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_reputations_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_reputations_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s reputations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s reputations.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -598,19 +598,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_soulbinds">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_soulbinds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_soulbinds" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_soulbinds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_soulbinds" title="Link to this definition"></a></dt>
 <dd><p>Returns a character’s soulbinds.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a character’s soulbinds.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -618,19 +618,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_specializations_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_specializations_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_specializations_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_specializations_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_specializations_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of a character’s specializations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of a character’s specializations.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -638,19 +638,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_statistics_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_statistics_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_statistics_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_statistics_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_statistics_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a statistics summary for a character.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a statistics summary for a character.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -658,19 +658,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_character_titles_summary">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_titles_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_titles_summary" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_character_titles_summary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">character_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_character_titles_summary" title="Link to this definition"></a></dt>
 <dd><p>Returns a summary of titles a character has obtained.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>character_name</strong> (<em>str</em>) – The lowercase name of the character.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a summary of titles a character has obtained.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -678,19 +678,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_guild">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild" title="Link to this definition"></a></dt>
 <dd><p>Returns a single guild by its name and realm.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>name_slug</strong> (<em>str</em>) – The slug of the guild.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a single guild by its name and realm.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -698,19 +698,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_guild_achievements">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_achievements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_achievements" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_achievements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_achievements" title="Link to this definition"></a></dt>
 <dd><p>Returns a single guild’s achievements by name and realm.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>name_slug</strong> (<em>str</em>) – The slug of the guild.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a single guild’s achievements by name and realm.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -718,19 +718,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_guild_activity">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_activity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_activity" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_activity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_activity" title="Link to this definition"></a></dt>
 <dd><p>Returns a single guild’s activity by name and realm.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>name_slug</strong> (<em>str</em>) – The slug of the guild.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a single guild’s activity by name and realm.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -738,19 +738,19 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_guild_roster">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_roster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_roster" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_guild_roster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">realm_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_guild_roster" title="Link to this definition"></a></dt>
 <dd><p>Returns a single guild’s roster by its name and realm.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>realm_slug</strong> (<em>str</em>) – The slug of the realm.</p></li>
 <li><p><strong>name_slug</strong> (<em>str</em>) – The slug of the guild.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Returns a single guild’s roster by its name and realm.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>
@@ -758,20 +758,20 @@ If the character is valid and the character IDs match, the client retains the da
 
 <dl class="py method">
 <dt class="sig sig-object py" id="aiowowapi.retail.profile.Profile.get_profile_api_resource">
-<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_profile_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_profile_api_resource" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">async</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_profile_api_resource</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">namespace</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#aiowowapi.retail.profile.Profile.get_profile_api_resource" title="Link to this definition"></a></dt>
 <dd><p>Generic method for retrieving data from a Profile API endpoint</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>namespace</strong> (<em>str</em>) – The namespace of the resource we’re trying to access</p></li>
 <li><p><strong>endpoint</strong> (<em>str</em>) – The endpoint of the resource we’re trying to access</p></li>
 <li><p><strong>params</strong> (<em>dict</em><em>, </em><em>optional</em>) – Parameters to send with the request, defaults to None</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The result of the API request (Warning: Can be None/Null)</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dict</p>
 </dd>
 </dl>

@@ -256,6 +256,7 @@ class API:
     async def get_resource(self,
                            hostname: str, api_endpoint: str,
                            params: Optional[dict] = None,
+                           headers: Optional[dict] = None,
                            auth: Optional[aiohttp.BasicAuth] = None,
                            method: Optional[str] = "GET",
                            ) -> Optional[dict]:
@@ -269,6 +270,8 @@ class API:
         :param params: The additional arguments/parameters we need to send with
             the request, defaults to None
         :type params: dict, optional
+        :param headers: Any header information to send with our request
+        :type headers: dict, optional
         :param auth: The aiohttp BasicAuth object to use for authentication,
             defaults to None
         :type auth: aiohttp.BasicAuth, optional
@@ -317,15 +320,6 @@ class API:
                             'Invalid HTTP request method {}, supported '
                             'methods are {}'.format(
                                 method, list(supported_methods.keys())))
-
-                    # Work around for recent changes, buying a little bit of
-                    # time so we can update everything.
-                    # https://us.forums.blizzard.com/en/blizzard/t/upcoming-changes-to-battlenet%E2%80%99s-api-gateway/51561
-                    headers = {}
-                    if params and params.get("access_token"):
-                        token = params["access_token"]
-                        headers = {"Authorization": f"Bearer {token}"}
-                        params.pop("access_token")
 
                     # Make the request
                     async with supported_methods[method](

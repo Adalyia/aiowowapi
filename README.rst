@@ -14,6 +14,8 @@
 aiowowapi docs
 =====================================
 
+Warning: I have personally stopped playing World of Warcraft, if you'd like to take over maintenance of the project or see any issues you can create an issue on GitHub and I promise I'll look into it ASAP.
+
 An asynchronous client library for interacting with the World of Warcraft API endpoints using the ``async`` / ``await`` syntax.
 
 

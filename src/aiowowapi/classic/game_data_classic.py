@@ -40,9 +40,13 @@ class GameData:
 
         params["namespace"] = namespace.format(region=region),
         params["locale"] = locale,
-        params["access_token"] = token
 
-        return await self.api.get_resource(hostname, endpoint, params)
+        # Thank you to https://github.com/karlsbjorn and https://github.com/mty22
+        # https://github.com/Adalyia/aiowowapi/pull/2
+        headers = {"Authorization": f"Bearer {token}"}
+
+
+        return await self.api.get_resource(hostname, endpoint, params, headers)
 
 # region Auction House API
 
